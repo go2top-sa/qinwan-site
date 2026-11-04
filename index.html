@@ -446,6 +446,26 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
 .fld select,.fld input:not([type=checkbox]):not([type=radio]),.fld textarea{width:100%;max-width:100%;min-width:0;box-sizing:border-box;text-overflow:ellipsis}
 .card.wsec{margin-bottom:18px}.card.wsec h3{margin-bottom:12px}
 @media (max-width:1240px){[id^="w-"] .g2{grid-template-columns:1fr}}
+/* ضبط القياس الموحد لمساحة العمل ومساحتي */
+.wpane{max-width:1180px;margin-inline:auto}
+#s-ws .card,#s-me .card{padding:20px 22px}
+#s-ws .card h3,#s-me .card h3{font-size:1.05rem}
+.wh h1,#s-me .ph-head h1{font-size:1.5rem;line-height:1.4}
+#s-ws .fld select,#s-ws .fld input:not([type=checkbox]):not([type=radio]),#s-ws .fld textarea,#s-me .fld select,#s-me .fld input:not([type=checkbox]):not([type=radio]),#s-me .fld textarea{padding:9px 12px;font-size:.92rem;min-height:42px}
+#s-ws .tbl,#s-me .tbl{font-size:.86rem}
+#s-ws .tbl th,#s-ws .tbl td{padding:9px 12px}
+#s-ws .btn.sm,#s-me .btn.sm{font-size:.84rem}
+@media (max-width:1180px) and (min-width:981px){
+  .ws{grid-template-columns:200px minmax(0,1fr)}
+  .side{padding:14px 10px}
+  .side .lb,.side .grp{display:block}
+  .side .grp + .it{margin-top:0}
+  .side button.it{justify-content:flex-start;padding:8px 10px;font-size:.84rem}
+  .side button.it .cnt{position:static;font-size:.7rem}
+  .side button.it[aria-current=page]::before{inset-inline-start:-10px}
+  .uname{display:flex;flex-direction:column;line-height:1.25}
+  .wmain{padding:22px 22px 90px}
+}
 
 .pnav{gap:2px}
 .pnav button{display:flex;align-items:center;gap:7px;padding:8px 12px;border-radius:10px;color:var(--muted);font-family:var(--f-head);font-weight:600;font-size:.9rem;transition:background .25s,color .25s}
