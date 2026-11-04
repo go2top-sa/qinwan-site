@@ -441,6 +441,15 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
 @media (max-width:560px){.pub-h .wrap{gap:8px}.pub-h .brand img{height:42px}.pub-h .brand b{font-size:1rem}.pub-h .brand small{font-size:.66rem}.hcta{gap:4px}.lang{padding:6px 8px}.burger{padding:6px}}
 
 .statusband[hidden]{display:none!important}
+
+.pnav{gap:2px}
+.pnav button{display:flex;align-items:center;gap:7px;padding:8px 12px;border-radius:10px;color:var(--muted);font-family:var(--f-head);font-weight:600;font-size:.9rem;transition:background .25s,color .25s}
+.pnav button::after{display:none}
+.pnav button svg{width:18px;height:18px;flex:none}
+.pnav button:hover{background:var(--lime-l);color:var(--leaf)}
+.pnav button[aria-current=page]{background:var(--leaf-l);color:var(--leaf);font-weight:600}
+@media (min-width:1321px){.pub-h .wrap{flex-wrap:wrap;row-gap:0}.pub-h .wrap>.pnav{order:3;flex:1 0 100%;justify-content:center;gap:6px;padding:8px 0 10px;margin-top:10px;border-top:1px solid var(--line)}.pnav button{padding:9px 16px}}
+@media (max-width:1320px){.pnav{gap:4px}.pnav button{padding:11px 12px;font-size:.95rem}}
 </style>
 <script src="config.js"></script>
 <script src="vendor/supabase.js"></script>
@@ -480,14 +489,14 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
     <div class="wrap">
       <button class="brand" data-pv="home" aria-label="الرئيسية"><img data-logo="dark" alt="شعار جمعية قنوان"><span><b data-i>جمعية قنوان</b><small data-i>للتنمية والتعليم</small></span></button>
       <nav class="pnav" id="pnav" aria-label="القائمة الرئيسية">
-        <button data-pv="home" aria-current="page" data-i>الرئيسية</button>
-        <button data-pv="about" data-i>من نحن</button>
-        <button data-pv="programs" data-i>البرامج</button>
-        <button data-pv="academy" data-i>الأكاديمية</button>
-        <button data-pv="store" data-i>المتجر</button>
-        <button data-pv="know" data-i>المستودع الرقمي</button>
-        <button data-pv="gov" data-i>الأثر والحوكمة</button>
-                <button data-pv="contact" data-i>تواصل معنا</button>
+        <button data-pv="home" aria-current="page"><svg aria-hidden="true"><use href="#i-home"/></svg><span data-i>الرئيسية</span></button>
+        <button data-pv="about"><svg aria-hidden="true"><use href="#i-users"/></svg><span data-i>من نحن</span></button>
+        <button data-pv="programs"><svg aria-hidden="true"><use href="#i-layers"/></svg><span data-i>البرامج</span></button>
+        <button data-pv="academy"><svg aria-hidden="true"><use href="#i-book"/></svg><span data-i>الأكاديمية</span></button>
+        <button data-pv="store"><svg aria-hidden="true"><use href="#i-cart"/></svg><span data-i>المتجر</span></button>
+        <button data-pv="know"><svg aria-hidden="true"><use href="#i-lib"/></svg><span data-i>المستودع الرقمي</span></button>
+        <button data-pv="gov"><svg aria-hidden="true"><use href="#i-chart"/></svg><span data-i>الأثر والحوكمة</span></button>
+                <button data-pv="contact"><svg aria-hidden="true"><use href="#i-inbox"/></svg><span data-i>تواصل معنا</span></button>
       </nav>
       <div class="hcta">
         <button class="btn a" data-pv="give" data-tab="d1" data-i>تبرع الآن</button>
@@ -1186,7 +1195,7 @@ function needAccount(m){
 let AUTHTAB = 'in', RECOVER = false;
 const AUTHERR = e => { const c = (e?.code || '') + ' ' + (e?.message || ''); if(/invalid_credentials|Invalid login/i.test(c)) return 'البريد أو كلمة المرور غير صحيحة.'; if(/already|exists|registered/i.test(c)) return 'هذا البريد مسجل مسبقًا. استخدمي «دخول» أو «نسيت كلمة المرور».'; if(/not confirmed|email_not_confirmed/i.test(c)) return 'لم يُؤكَّد البريد بعد. افتحي رسالة التأكيد في بريدك ثم سجّلي الدخول.'; if(/weak|password/i.test(c)) return 'كلمة المرور ضعيفة: استخدمي 8 أحرف على الأقل.'; if(/rate|too many/i.test(c)) return 'محاولات كثيرة. انتظري دقيقة ثم أعيدي المحاولة.'; return 'تعذر إتمام العملية. تحققي من الاتصال وأعيدي المحاولة.'; };
 const localNote = () => QDB.mode === 'local' ? '<p class="small note" style="padding:10px 12px;border-radius:10px">وضع العرض: الحسابات والبيانات تُحفظ في هذا المتصفح حتى يُربط الموقع بقاعدة البيانات المركزية.</p>' : '';
-const tabsHtml = staff => `<div class="seg" role="tablist" style="display:flex;gap:6px;background:var(--lime-l,#EEF4DC);padding:5px;border-radius:12px">${[['in', 'دخول'], ...(staff ? [] : [['up', 'حساب جديد']]), ['fg', 'نسيت كلمة المرور']].map(([k, v]) => `<button type="button" role="tab" data-atab="${k}" aria-selected="${AUTHTAB === k}" class="btn sm ${AUTHTAB === k ? 'p' : 'o'}" style="flex:1">${v}</button>`).join('')}</div>`;
+const tabsHtml = staff => `<div class="seg" role="tablist" style="display:flex;gap:6px;background:var(--lime-l,#EEF4DC);padding:5px;border-radius:12px">${[['in', 'دخول'], ['up', staff ? 'تسجيل موظف' : 'حساب جديد'], ['fg', 'نسيت كلمة المرور']].map(([k, v]) => `<button type="button" role="tab" data-atab="${k}" aria-selected="${AUTHTAB === k}" class="btn sm ${AUTHTAB === k ? 'p' : 'o'}" style="flex:1">${v}</button>`).join('')}</div>`;
 const inForm = id => `<form id="${id}" class="auth-box" style="gap:12px" novalidate>
     <div class="fld"><label for="${id}-e">البريد الإلكتروني</label><input id="${id}-e" type="email" autocomplete="email" dir="ltr" required></div>
     <div class="fld"><label for="${id}-p">كلمة المرور</label><input id="${id}-p" type="password" autocomplete="current-password" dir="ltr" required></div>
@@ -1203,6 +1212,7 @@ const profFields = withCred => `
     <label class="chkl"><input type="checkbox" id="su-ok"><span>أوافق على سياسة الخصوصية وشروط الاستخدام، وأعلم أن بيانات أطفالي لا تُنشر ولا تُشارك.</span></label>`;
 function renderLogin(){
   const b = $('#loginBody'); if(!b) return;
+  if(CUR === 'stafflogin'){ b.innerHTML = ''; return; }
   if(!S.ready){ b.innerHTML = '<p class="small">جارٍ التحقق من حسابك…</p>'; return; }
   if(RECOVER && S.uid){
     b.innerHTML = `<div><h1 style="font-size:1.6rem">تعيين كلمة مرور جديدة</h1></div><form id="f-np" class="auth-box" style="gap:12px" novalidate><div class="fld"><label for="np-p">كلمة المرور الجديدة</label><input id="np-p" type="password" autocomplete="new-password" dir="ltr"></div><button class="btn p" type="submit">حفظ</button><div class="msg" id="np-m"></div></form>`; return;
@@ -1263,7 +1273,7 @@ document.addEventListener('submit', async e => {
       if(!r.session){ btn.disabled = false; AUTHTAB = 'in'; renderLogin(); showMsg($('#f-in-m'), 'أنشأنا حسابك. أرسلنا رسالة تأكيد إلى ' + email + '؛ افتحيها ثم سجّلي الدخول هنا.', true); return; }
       await bootSession(true);
     }
-    S.goMe = true; await writeMe({...profile, ...auditSelf('إنشاء حساب')}); if(S.me) { S.goMe = false; mode('me'); }
+    const staffUp = !!e.target.dataset.staff; S.goMe = !staffUp; await writeMe({...profile, ...auditSelf('إنشاء حساب')}); if(staffUp){ S.goMe = false; AUTHTAB = 'in'; renderStaff(); } else if(S.me) { S.goMe = false; mode('me'); }
   }catch(err){ showMsg(m, AUTHERR(err), false); }
   btn.disabled = false;
 });
@@ -1274,10 +1284,11 @@ const myRoles = () => (S.roles || []).includes('admin') ? Object.keys(ROLES) : (
 let PICK = 'admin';
 function renderStaff(){
   const b = $('#staffBody'); if(!b) return;
+  if(CUR !== 'stafflogin'){ b.innerHTML = ''; return; }
   if(!S.ready){ b.innerHTML = '<p class="small">جارٍ التحقق من صلاحيتك…</p>'; return; }
-  if(!S.uid){ if(AUTHTAB === 'up') AUTHTAB = 'in';
-    b.innerHTML = `<div><h1 style="font-size:1.6rem">دخول فريق العمل</h1><p class="small">ادخلي بحسابك في المنصة. تظهر مساحة العمل لمن أسند إليه مدير المنصة دورًا.</p></div>${tabsHtml(true)}${AUTHTAB === 'fg' ? fgForm() : inForm('f-sin')}${localNote()}`; return; }
-  if(!S.isAdmin){ b.innerHTML = `<div><h1 style="font-size:1.6rem">دخول فريق العمل</h1><p class="small">الحساب ${esc(S.email)} ليس ضمن فريق الجمعية. يُسند مدير المنصة الأدوار من «الحسابات» في مساحة العمل.</p></div><button class="btn o" data-jump="pub">العودة للموقع</button><button class="btn o sm" data-signout>تسجيل الخروج</button>`; return; }
+  if(!S.uid){
+    b.innerHTML = `<div><h1 style="font-size:1.6rem">${AUTHTAB === 'up' ? 'تسجيل موظف جديد' : 'دخول فريق العمل'}</h1><p class="small">${AUTHTAB === 'up' ? 'أنشئي حسابك ببريدك، ثم يُسند إليك مدير المنصة دورك من «الحسابات»، فتظهر لك مساحة العمل عند الدخول.' : 'ادخلي بحسابك في المنصة. تظهر مساحة العمل لمن أسند إليه مدير المنصة دورًا.'}</p></div>${tabsHtml(true)}${AUTHTAB === 'fg' ? fgForm() : AUTHTAB === 'up' ? `<form id="f-up" data-staff="1" class="auth-box" style="gap:12px" novalidate>${profFields(true)}<button class="btn s" type="submit">إنشاء الحساب</button><div class="msg" id="suMsg"></div></form>` : inForm('f-sin')}${localNote()}`; return; }
+  if(!S.isAdmin){ b.innerHTML = `<div><h1 style="font-size:1.6rem">دخول فريق العمل</h1><p class="small">حسابك ${esc(S.email)} جاهز، ولم يُسند إليه دور في فريق العمل بعد. أرسلي هذا البريد إلى مدير المنصة ليسند إليك دورك من «الحسابات»، ثم ادخلي من هنا.</p></div><button class="btn o" data-jump="pub">العودة للموقع</button><button class="btn o sm" data-signout>تسجيل الخروج</button>`; return; }
   const rs = myRoles(); if(!rs.includes(PICK)) PICK = rs[0];
   b.innerHTML = `<div><h1 style="font-size:1.6rem">دخول فريق العمل</h1><p class="small">مرحبًا ${esc(S.me?.name || S.meta?.name || S.email)}. اختاري الدور الذي تدخلين به؛ يحدد الدور الأقسام التي تظهر لك.</p></div>
   <div class="demo"><h4>أدوارك المسندة</h4><div class="demo-list">${rs.map(k => `<button type="button" data-role="${k}" aria-pressed="${k === PICK}"><b>${ROLES[k][0]}</b><small style="direction:rtl">${ROLES[k][1]}</small></button>`).join('')}</div></div>
