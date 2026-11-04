@@ -446,6 +446,9 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
 .fld select,.fld input:not([type=checkbox]):not([type=radio]),.fld textarea{width:100%;max-width:100%;min-width:0;box-sizing:border-box;text-overflow:ellipsis}
 .card.wsec{margin-bottom:18px}.card.wsec h3{margin-bottom:12px}
 @media (max-width:1240px){[id^="w-"] .g2{grid-template-columns:1fr}}
+.utilbar .ul button{display:inline-flex;align-items:center;gap:6px}.utilbar .ul button{white-space:nowrap}@media (max-width:720px){.utilbar .ul [data-tab=d3],.utilbar .ul [data-jump=stafflogin]{display:none}.utilbar .ul{gap:14px;justify-content:center;width:100%}}.utilbar .ul button svg{width:15px;height:15px;flex:none;opacity:.85}
+.board .bm{flex-direction:row;align-items:center;gap:14px}.board .bm .av{width:46px;height:46px;border-radius:50%;background:var(--lime-l);color:var(--leaf);display:grid;place-items:center;font-family:var(--f-head);font-weight:800;font-size:1.1rem;flex:none}.board .bm.chair .av{background:var(--violet-l);color:var(--plum)}.board .bm h3{font-size:1rem;margin-top:6px}.board .bm .chip{font-size:.72rem}
+.idblk[hidden]{display:none!important}
 [id^="w-"] .g2{align-items:stretch!important}#s-ws .tbl{min-width:720px}#s-ws .tbl th,#s-ws .tbl td:first-child,#s-ws .tbl .chip{white-space:nowrap}#s-ws .tbl td:last-child{min-width:200px;width:220px;max-width:240px;white-space:normal}#s-ws .tbl td:last-child .btn{margin:2px}
 #s-ws .scroll{overflow-x:auto;border-radius:12px}
 /* ضبط القياس الموحد لمساحة العمل ومساحتي */
@@ -515,7 +518,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
 <div class="statusband" id="statusBand" role="status" hidden></div>
 <!-- ================= الموقع العام ================= -->
 <section class="surface" id="s-pub">
-  <div class="utilbar gut"><div class="wrap"><span data-i>الرقم الوطني الموحد 7043445100</span><span class="ul"><button data-pv="give" data-tab="d2" data-i>تطوع معنا</button><button data-pv="contact" data-i>المقترحات والشكاوى</button><button data-pv="contact" data-i>تواصل معنا</button><button data-jump="stafflogin" data-i>دخول فريق العمل</button></span></div></div>
+  <div class="utilbar gut"><div class="wrap"><span data-i>الرقم الوطني الموحد 7043445100</span><span class="ul"><button data-pv="give" data-tab="d2"><svg aria-hidden="true"><use href="#i-hand"/></svg><span data-i>تطوع معنا</span></button><button data-pv="give" data-tab="d3"><svg aria-hidden="true"><use href="#i-users"/></svg><span data-i>الشراكات</span></button><button data-pv="contact" data-ctype="شكوى"><svg aria-hidden="true"><use href="#i-alert"/></svg><span data-i>المقترحات والشكاوى</span></button><button data-pv="contact" data-ctype="استفسار"><svg aria-hidden="true"><use href="#i-inbox"/></svg><span data-i>تواصل معنا</span></button><button data-jump="stafflogin"><svg aria-hidden="true"><use href="#i-shield"/></svg><span data-i>دخول فريق العمل</span></button></span></div></div>
   <header class="pub-h gut">
     <div class="wrap">
       <button class="brand" data-pv="home" aria-label="الرئيسية"><img data-logo="dark" alt="شعار جمعية قنوان"><span><b data-i>جمعية قنوان</b><small data-i>للتنمية والتعليم</small></span></button>
@@ -622,7 +625,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
         <div data-i>جهة الإشراف</div><div data-i>المركز الوطني لتنمية القطاع غير الربحي</div>
         <div data-i>الإشراف الفني</div><div data-i>وزارة التعليم</div>
       </div></div>
-      <div data-tp="a4" hidden><div class="grid g3"><div class="card top"><span class="chip v" data-i>رئيسة مجلس الإدارة</span><h3 data-i>أ.د. إيمان عبدالله عمر العمودي</h3></div><div class="card top"><span class="chip a" data-i>بانتظار الاعتماد</span><h3 data-i>بقية أعضاء المجلس</h3><p class="small" data-i>تُنشر الأسماء والصفات بعد قرار التشكيل.</p></div></div></div>
+      <div data-tp="a4" hidden><p style="text-align:center;max-width:760px;margin:0 auto 22px" data-i>يتولى مجلس الإدارة الإشراف على أعمال الجمعية وفق لائحتها الأساسية المعتمدة من المركز الوطني لتنمية القطاع غير الربحي.</p><div class="grid g3 board"><div class="card top bm chair"><span class="av">إ</span><div><span class="chip v" data-i>رئيسة مجلس الإدارة</span><h3 data-i>أ.د. إيمان عبدالله عمر العمودي</h3></div></div><div class="card top bm"><span class="av">ح</span><div><span class="chip" data-i>عضو مجلس الإدارة</span><h3>حياة يوسف منصور صبياني</h3></div></div><div class="card top bm"><span class="av">إ</span><div><span class="chip" data-i>عضو مجلس الإدارة</span><h3>إيمان محمد فواز الصميل</h3></div></div><div class="card top bm"><span class="av">ص</span><div><span class="chip" data-i>عضو مجلس الإدارة</span><h3>صفاء محمد أشرف علي المليباري</h3></div></div><div class="card top bm"><span class="av">أ</span><div><span class="chip" data-i>عضو مجلس الإدارة</span><h3>أمل عبدالله عمر العمودي</h3></div></div><div class="card top bm"><span class="av">ج</span><div><span class="chip" data-i>عضو مجلس الإدارة</span><h3>جمانة خالد محمد باسمح</h3></div></div><div class="card top bm"><span class="av">ع</span><div><span class="chip" data-i>عضو مجلس الإدارة</span><h3>العنود عبدالله صالح اليحيى</h3></div></div><div class="card top bm"><span class="av">ر</span><div><span class="chip" data-i>عضو مجلس الإدارة</span><h3>ريم مرجي مسدح العنزي</h3></div></div><div class="card top bm"><span class="av">س</span><div><span class="chip" data-i>عضو مجلس الإدارة</span><h3>سمية ديب ديب السوادي</h3></div></div><div class="card top bm"><span class="av">س</span><div><span class="chip" data-i>عضو مجلس الإدارة</span><h3>سمر عبدالله عبدالرحمن المطلق</h3></div></div></div></div>
     </div></div></div>
 
     <!-- البرامج والأكاديمية -->
@@ -655,13 +658,8 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
 <div class="view" id="pv-know"><div class="band gut"><div class="wrap">
       <div class="title"><h2 data-i>المستودع الرقمي</h2><p data-i>محتوى تعليمي متنوع وغني للأسرة والمربيات</p></div>
       <div class="search"><input type="search" id="ks" placeholder="ابحث عن محتوى..." aria-label="البحث في المستودع"></div>
-      <div class="tabs"><button aria-pressed="true" data-i>الكل</button><button aria-pressed="false" data-i>مقالات</button><button aria-pressed="false" data-i>فيديوهات</button><button aria-pressed="false" data-i>صوتيات</button><button aria-pressed="false" data-i>أدلة</button><button aria-pressed="false" data-i>أوراق عمل</button></div>
-      <div class="grid g4">
-        <div class="pcard"><div class="ph"></div><div class="pb"><span class="chip" data-i>فيديو</span><h3 data-i>سلسلة حكايا الأنبياء</h3><p class="small" data-i>قصص الأنبياء عليهم السلام للأطفال.</p></div></div>
-        <div class="pcard"><div class="ph w"></div><div class="pb"><span class="chip" data-i>صوتي</span><h3 data-i>مجالس تفسير السعدي</h3><p class="small" data-i>157 مجلسًا في 170 ساعة.</p></div></div>
-        <div class="pcard"><div class="ph"></div><div class="pb"><span class="chip" data-i>مقالة</span><h3 data-i>تربية الأطفال في العصر الرقمي</h3><p class="small" data-i>التعامل مع أثر التقنية على الأطفال.</p></div></div>
-        <div class="pcard"><div class="ph w"></div><div class="pb"><span class="chip" data-i>دليل</span><h3 data-i>دليل الوالدين الشامل</h3><p class="small" data-i>نصائح وإرشادات عملية للوالدين.</p></div></div>
-      </div>
+      <div class="tabs" id="kTabs"><button aria-pressed="true" data-kf="all" data-i>الكل</button><button aria-pressed="false" data-kf="article" data-i>مقالات</button><button aria-pressed="false" data-kf="video" data-i>فيديوهات</button><button aria-pressed="false" data-kf="audio" data-i>صوتيات</button><button aria-pressed="false" data-kf="guide" data-i>أدلة</button><button aria-pressed="false" data-kf="sheet" data-i>أوراق عمل</button></div>
+      <div class="grid g4" id="kGrid"></div>
     </div></div></div>
 
     <!-- الأثر والحوكمة -->
@@ -722,7 +720,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
         </div>
         <div class="card" style="margin-top:22px"><h3 style="text-align:center" data-i>مزايا التطوع معنا</h3><div class="grid g3" style="gap:8px"><span class="check" data-i>شهادات تقديرية</span><span class="check" data-i>خبرات عملية قيمة</span><span class="check" data-i>ساعات موثقة</span><span class="check" data-i>فرص تطوير المهارات</span><span class="check" data-i>بيئة عمل إيجابية</span><span class="check" data-i>أثر مجتمعي مباشر</span></div></div>
         <h3 style="margin:26px 0 12px" data-i>بنك المهام</h3><div class="grid g3" id="vGrid"></div>
-        <div class="card" style="margin-top:22px" id="volCard"><h3 data-i>طلب التطوع</h3><form id="volForm" class="fgrid" novalidate>
+        <div class="card" style="margin-top:22px" id="volCard"><h3 data-i>طلب التطوع</h3><form id="volForm" class="fgrid" novalidate><div class="idblk full fgrid" style="margin:0"><p class="small full" style="margin:0">بياناتك للتواصل معك بشأن طلبك. لا تُنشر ولا تُستخدم لغير هذا الغرض.</p><div class="fld"><label>الاسم الكامل</label><input type="text" class="idName" autocomplete="name"></div><div class="fld"><label>رقم الجوال</label><input type="tel" class="idPhone" autocomplete="tel" placeholder="05xxxxxxxx" dir="ltr"></div><div class="fld full"><label>البريد الإلكتروني (اختياري)</label><input type="email" class="idEmail" autocomplete="email" dir="ltr"></div></div>
           <div class="fld"><label for="vTask" data-i>المهمة المرغوبة</label><select id="vTask"></select></div>
           <div class="fld"><label for="vTime" data-i>الوقت المتاح أسبوعيًا</label><select id="vTime"><option>ساعة أو ساعتان</option><option>ثلاث ساعات أو أكثر</option><option>حسب المهمة</option></select></div>
           <div class="fld full"><label for="vSkills" data-i>المهارات</label><textarea id="vSkills"></textarea></div>
@@ -736,7 +734,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
           <div class="card hov edge"><h3 data-i>تعاون محتوى</h3><p data-i>التعاون في إنتاج المواد التعليمية</p></div>
           <div class="card hov edge"><h3 data-i>شراكة مجتمعية</h3><p data-i>شراكات أكاديمية ومجتمعية بقيمة متبادلة</p></div>
         </div>
-        <div class="card" style="margin-top:22px"><h3 data-i>طلب شراكة</h3><form id="partForm" class="fgrid" novalidate>
+        <div class="card" style="margin-top:22px"><h3 data-i>طلب شراكة</h3><form id="partForm" class="fgrid" novalidate><div class="idblk full fgrid" style="margin:0"><p class="small full" style="margin:0">بياناتك للتواصل معك بشأن طلبك. لا تُنشر ولا تُستخدم لغير هذا الغرض.</p><div class="fld"><label>اسم مقدم الطلب</label><input type="text" class="idName" autocomplete="name"></div><div class="fld"><label>رقم الجوال</label><input type="tel" class="idPhone" autocomplete="tel" placeholder="05xxxxxxxx" dir="ltr"></div><div class="fld full"><label>البريد الإلكتروني (اختياري)</label><input type="email" class="idEmail" autocomplete="email" dir="ltr"></div></div>
           <div class="fld"><label for="pOrg" data-i>اسم الجهة</label><input type="text" id="pOrg"></div>
           <div class="fld"><label for="pField" data-i>مجال التعاون</label><select id="pField"><option>شراكة استراتيجية</option><option>رعاية برنامج</option><option>تعاون محتوى</option><option>شراكة مجتمعية</option></select></div>
           <div class="fld full"><label for="pDesc" data-i>وصف التعاون المقترح</label><textarea id="pDesc"></textarea></div>
@@ -752,7 +750,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
         <div class="news"><div class="nh"></div><div class="nb"><span class="chip v" data-i>مجالس</span><h3 data-i>وريف العنادل: 381 مجلس سماع في كتب التراث</h3><p class="small" data-i>355 ساعة من المجالس العلمية.</p></div></div>
         <div class="news"><div class="nh"></div><div class="nb"><span class="chip g" data-i>الجمعية</span><h3 data-i>قنوان تحصل على ترخيص المركز الوطني</h3><p class="small" data-i>بالرقم 1000719000 بتاريخ 15/7/1446هـ.</p></div></div>
       </div>
-      <div class="card" style="max-width:560px;margin:30px auto 0;text-align:center"><h3 data-i>ابقَ على اطلاع</h3><p class="small" data-i>اشترك في النشرة البريدية لتصلك البرامج الجديدة.</p><div style="display:flex;gap:8px;margin-top:8px"><input type="email" id="nl" placeholder="بريدك الإلكتروني" aria-label="البريد الإلكتروني" style="flex:1;min-width:0;padding:10px 14px;border:2px solid var(--line);border-radius:8px"><button class="btn p" data-i>اشترك</button></div></div>
+      <div class="card" style="max-width:560px;margin:30px auto 0;text-align:center"><h3 data-i>ابقَ على اطلاع</h3><p class="small" data-i>اشترك في النشرة البريدية لتصلك البرامج الجديدة.</p><div style="display:flex;gap:8px;margin-top:8px"><input type="email" id="nl" placeholder="بريدك الإلكتروني" aria-label="البريد الإلكتروني" style="flex:1;min-width:0;padding:10px 14px;border:2px solid var(--line);border-radius:8px"><button class="btn p" id="nlBtn" type="button" data-i>اشترك</button></div><div class="msg" id="nlMsg" style="margin-top:8px"></div></div>
     </div></div></div>
 
     <!-- تواصل -->
@@ -760,7 +758,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
       <div class="title"><h2 data-i>تواصل معنا</h2><p data-i>نستقبل استفساراتكم وشكاواكم ومقترحاتكم، ونرد عليها في مدد محددة</p></div>
       <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)">
         <div class="card edge"><h3 data-i>البريد الإلكتروني</h3><p dir="ltr" style="text-align:start">qinwan@org-edu.com</p><h3 data-i>المقر</h3><p data-i>الرياض، المملكة العربية السعودية</p><h3 data-i>مدد الرد</h3><p class="small" data-i>استلام الشكوى خلال يومي عمل، والرد خلال عشرة أيام عمل.</p></div>
-        <div class="card"><h3 data-i>نموذج الاتصال</h3><form id="cForm" class="fgrid" novalidate>
+        <div class="card"><h3 data-i>نموذج الاتصال</h3><form id="cForm" class="fgrid" novalidate><div class="idblk full fgrid" style="margin:0"><p class="small full" style="margin:0">بياناتك للتواصل معك بشأن طلبك. لا تُنشر ولا تُستخدم لغير هذا الغرض.</p><div class="fld"><label>الاسم الكامل</label><input type="text" class="idName" autocomplete="name"></div><div class="fld"><label>رقم الجوال</label><input type="tel" class="idPhone" autocomplete="tel" placeholder="05xxxxxxxx" dir="ltr"></div><div class="fld full"><label>البريد الإلكتروني (اختياري)</label><input type="email" class="idEmail" autocomplete="email" dir="ltr"></div></div>
           <div class="fld"><label for="cType" data-i>نوع الرسالة</label><select id="cType"><option>استفسار</option><option>شكوى</option><option>اقتراح</option><option>مقترح برنامج</option></select></div>
           <div class="fld"><label for="cProg" data-i>البرنامج المعني</label><select id="cProg"><option>عام</option></select></div>
           <div class="fld full"><label for="cText" data-i>نص الرسالة</label><textarea id="cText"></textarea></div>
@@ -953,7 +951,10 @@ const QDB = (() => {
       onAuth(fn){ sb.auth.onAuthStateChange((ev, s) => fn(ev, s ? s.user : null)); },
       async grant(email, roles){ const {data, error} = await sb.rpc('grant_staff', {member_email: email, member_roles: roles}); if(error) throw error; return data; },
       async revoke(email){ const {data, error} = await sb.rpc('revoke_staff', {member_email: email}); if(error) throw error; return data; },
-      async staffList(){ const {data} = await sb.from('staff').select('email,name,roles,created_at').order('created_at'); return data || []; }
+      async staffList(){ const {data} = await sb.from('staff').select('email,name,roles,created_at').order('created_at'); return data || []; },
+      async inquiry(rec){ const {error} = await sb.from('inquiries').insert(rec); if(error) throw error; },
+      async inquiries(){ const {data, error} = await sb.from('inquiries').select('*').order('created_at', {ascending:false}).limit(500); if(error) throw error; return data || []; },
+      async updInquiry(id, patch){ const {error} = await sb.from('inquiries').update(patch).eq('id', id); if(error) throw error; }
     };
   }
 
@@ -985,7 +986,10 @@ const QDB = (() => {
     onAuth(){},
     async grant(email, roles){ const id = Object.keys(st.users).find(k => st.users[k].email === email.toLowerCase()); if(!id) return 'not_found'; st.staff[id] = roles; save(); return 'ok'; },
     async revoke(email){ const id = Object.keys(st.users).find(k => st.users[k].email === email.toLowerCase()); if(id === st.session) return 'self'; if(id) delete st.staff[id]; save(); return 'ok'; },
-    async staffList(){ return Object.entries(st.staff).map(([id, roles]) => ({email: st.users[id]?.email || '', name: st.users[id]?.meta?.name || '', roles})); }
+    async staffList(){ return Object.entries(st.staff).map(([id, roles]) => ({email: st.users[id]?.email || '', name: st.users[id]?.meta?.name || '', roles})); },
+    async inquiry(rec){ st.inq = st.inq || {}; st.inq[rec.id] = {...rec, status:'new', staff_note:'', created_at:new Date().toISOString()}; save(); },
+    async inquiries(){ return Object.values(st.inq || {}).sort((a, b) => b.created_at.localeCompare(a.created_at)); },
+    async updInquiry(id, patch){ st.inq[id] = {...st.inq[id], ...patch}; save(); }
   };
 })();
 
@@ -1641,6 +1645,112 @@ function showCert(k){
   const ref = 'QNW-' + (en.certRef || k).replace(/[^a-z0-9]/gi, '').slice(-8).toUpperCase();
   modal(`<div class="cert"><img src="${LOGO.dark}" alt="" style="height:70px"><h2>شهادة إتمام</h2><p>تشهد جمعية قنوان للتنمية والتعليم بأن</p><h3 style="font-size:1.5rem">${esc(en.whoName || S.me.name)}</h3><p>أتمّ متطلبات <b>${esc(c.name)}</b></p><p class="small">تاريخ الإتمام: ${fmtD(en.certAt || en.quiz?.at)}</p><p class="small">الرقم المرجعي: ${ref} | رمز التحقق: ${esc(S.uid.slice(-4).toUpperCase())}-${ref.slice(-4)}</p><p class="small">شهادة مشاركة وإتمام، لا تحمل اعتمادًا أكاديميًا.</p></div>`);
 }
+/* ===== نماذج الزوار دون حساب ===== */
+const IQK = {contact:'استفسار', complaint:'شكوى', suggestion:'اقتراح', program:'مقترح برنامج', volunteer:'طلب تطوع', partner:'طلب شراكة', newsletter:'اشتراك في النشرة'};
+const IQS = {new:['جديد','a'], in_progress:['قيد المعالجة','a'], accepted:['مقبول','g'], rejected:['معتذر عنه','v'], closed:['مغلق','g']};
+const CTYPE = {'استفسار':'contact', 'شكوى':'complaint', 'اقتراح':'suggestion', 'مقترح برنامج':'program'};
+const idBlock = org => `<div class="idblk full fgrid" style="margin:0">
+  <p class="small full" style="margin:0">بياناتك للتواصل معك بشأن طلبك. لا تُنشر ولا تُستخدم لغير هذا الغرض.</p>
+  <div class="fld"><label>${org ? 'اسم مقدم الطلب' : 'الاسم الكامل'}</label><input type="text" class="idName" autocomplete="name"></div>
+  <div class="fld"><label>رقم الجوال</label><input type="tel" class="idPhone" autocomplete="tel" placeholder="05xxxxxxxx" dir="ltr"></div>
+  <div class="fld full"><label>البريد الإلكتروني</label><input type="email" class="idEmail" autocomplete="email" dir="ltr"></div></div>`;
+function renderIdBlocks(){ const signed = !!S.me?.name; $$('.idblk').forEach(b => b.hidden = signed); $$('[data-need]').forEach(b => b.disabled = false); }
+function idOf(form, m){
+  if(S.me?.name) return {anon:false, name:S.me.name, phone:S.me.phone || '', email:S.me.email || S.email || ''};
+  const name = form.querySelector('.idName').value.trim(), phone = form.querySelector('.idPhone').value.trim().replace(/\s/g, ''), email = form.querySelector('.idEmail').value.trim();
+  if(name.length < 3){ showMsg(m, 'أدخل الاسم الكامل.', false); return null; }
+  if(!/^05\d{8}$/.test(phone)){ showMsg(m, 'أدخل رقم جوال سعودي صحيح يبدأ بـ 05.', false); return null; }
+  if(email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ showMsg(m, 'البريد الإلكتروني غير صحيح.', false); return null; }
+  return {anon:true, name, phone, email};
+}
+async function sendInquiry(rec){ const id = 'iq' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); await QDB.inquiry({id, name:'', phone:'', email:'', org:'', topic:'', body:'', ...rec}); return id; }
+const doneMsg = (m, form, txt) => { showMsg(m, txt, true); form.reset(); form.querySelectorAll('.idName,.idPhone,.idEmail').forEach(i => i.value = ''); };
+
+$('#volForm').onsubmit = async e => {
+  e.preventDefault(); const f = e.target, m = $('#volMsg'), who = idOf(f, m); if(!who) return;
+  if(!$('#vPledge').checked) return showMsg(m, 'يُشترط الإقرار بالتعهد قبل الإرسال.', false);
+  const task = $('#vTask').value, time = $('#vTime').value, skills = $('#vSkills').value.trim();
+  try{
+    if(!who.anon){ const id = nid('v'); await writeMe({vols:{[id]:{id, kind:'volunteer', task, time, skills, pledge:now(), at:now(), status:'pending'}}, ...auditSelf('طلب تطوع')}); return doneMsg(m, f, `حُفظ طلب التطوع برقم ${ref6(id)}. تابعه في «مساحتي» ← «طلباتي».`); }
+    const id = await sendInquiry({kind:'volunteer', name:who.name, phone:who.phone, email:who.email, topic:task + ' | ' + time, body:skills});
+    doneMsg(m, f, `استُلم طلب التطوع برقم ${ref6(id)}. يتواصل معك مسؤول التطوع على رقم جوالك.`);
+  }catch(err){ showMsg(m, 'تعذر الإرسال. حاول مرة أخرى.', false); }
+};
+$('#partForm').onsubmit = async e => {
+  e.preventDefault(); const f = e.target, m = $('#partMsg');
+  const org = $('#pOrg').value.trim(), desc = $('#pDesc').value.trim(), field = $('#pField').value;
+  if(!org || !desc) return showMsg(m, 'أدخل اسم الجهة ووصف التعاون.', false);
+  const who = idOf(f, m); if(!who) return;
+  try{
+    if(!who.anon){ const id = nid('pr'); await writeMe({vols:{[id]:{id, kind:'partner', org, field, desc, at:now(), status:'pending'}}, ...auditSelf('طلب شراكة')}); return doneMsg(m, f, `حُفظ طلب الشراكة برقم ${ref6(id)}، ويتابعه مسؤول الشراكات.`); }
+    const id = await sendInquiry({kind:'partner', name:who.name, phone:who.phone, email:who.email, org, topic:field, body:desc});
+    doneMsg(m, f, `استُلم طلب الشراكة برقم ${ref6(id)}. يتواصل معك مسؤول الشراكات خلال خمسة أيام عمل.`);
+  }catch(err){ showMsg(m, 'تعذر الإرسال. حاول مرة أخرى.', false); }
+};
+$('#cForm').onsubmit = async e => {
+  e.preventDefault(); const f = e.target, m = $('#cMsg');
+  const t = $('#cType').value, text = $('#cText').value.trim(), prog = $('#cProg').value;
+  if(!text) return showMsg(m, 'اكتب نص الرسالة.', false);
+  const who = idOf(f, m); if(!who) return;
+  try{
+    let id;
+    if(!who.anon){ id = nid('m'); await writeMe({msgs:{[id]:{id, type:t, prog, text, at:now(), status:'open'}}, ...auditSelf('رسالة: ' + t)}); }
+    else id = await sendInquiry({kind:CTYPE[t] || 'contact', name:who.name, phone:who.phone, email:who.email, topic:prog, body:text});
+    doneMsg(m, f, t === 'شكوى' ? `استُلمت الشكوى برقم ${ref6(id)}. يصلك إشعار الاستلام خلال يومي عمل، والرد خلال عشرة أيام عمل.` : `استُلمت رسالتك برقم ${ref6(id)}، ويصلك الرد ${who.anon ? 'على جوالك أو بريدك' : 'في «مساحتي»'}.`);
+  }catch(err){ showMsg(m, 'تعذر الإرسال. حاول مرة أخرى.', false); }
+};
+document.addEventListener('click', async e => {
+  const nb = e.target.closest('#nlBtn'); if(nb){
+    const em = $('#nl').value.trim(), m = $('#nlMsg');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) return showMsg(m, 'أدخل بريدًا إلكترونيًا صحيحًا.', false);
+    try{ await sendInquiry({kind:'newsletter', email:em, name:S.me?.name || ''}); $('#nl').value = ''; showMsg(m, 'تم اشتراكك في النشرة البريدية.', true); }catch(err){ showMsg(m, 'تعذر الاشتراك. حاول مرة أخرى.', false); }
+  }
+  const ct = e.target.closest('[data-ctype]'); if(ct){ setTimeout(() => { const s = $('#cType'); if(s) s.value = ct.dataset.ctype; $('#cText')?.focus(); }, 60); }
+});
+
+/* ===== طلبات الزوار في مساحة العمل ===== */
+let INQ = [];
+function renderInq(){
+  const pane = $('#w-vol'); if(!pane || !S.isAdmin) return;
+  let box = $('#inqBox'); if(!box){ box = document.createElement('div'); box.id = 'inqBox'; pane.appendChild(box); }
+  if(box.contains(document.activeElement)) return;
+  const open = INQ.filter(r => !['closed','rejected'].includes(r.status)).length;
+  box.innerHTML = `<div class="card wsec" style="margin-top:18px"><h3>طلبات الزوار دون حساب ${open ? `<span class="chip a">${open} مفتوح</span>` : ''}</h3><p class="small">التواصل والشكاوى والاقتراحات والتطوع والشراكات والنشرة البريدية من زوار لم يسجلوا حسابًا. يُتواصل معهم بالجوال أو البريد.</p>` +
+  (INQ.length ? `<div class="scroll"><table class="tbl"><thead><tr><th>الطلب</th><th>النوع</th><th>المرسل</th><th>التفاصيل</th><th>الحالة</th><th>الإجراء</th></tr></thead><tbody>${INQ.map(r => `<tr><td>${ref6(r.id)}<br><span class="small">${fmtD(r.created_at)}</span></td><td>${esc(IQK[r.kind] || r.kind)}</td><td>${esc(r.name || '')}${r.org ? '<br><span class="small">' + esc(r.org) + '</span>' : ''}<br><span class="small" dir="ltr">${esc(r.phone || '')}</span>${r.email ? '<br><span class="small" dir="ltr">' + esc(r.email) + '</span>' : ''}</td><td style="white-space:normal;min-width:240px">${r.topic ? '<b>' + esc(r.topic) + '</b><br>' : ''}<span class="small">${esc(r.body || '')}</span>${r.staff_note ? '<br><span class="small">ملاحظة الفريق: ' + esc(r.staff_note) + '</span>' : ''}</td><td>${chip(IQS, r.status)}</td><td>${['closed','rejected'].includes(r.status) ? '' : `${r.status === 'new' ? `<button class="btn o sm" data-iq="${r.id}" data-iqs="in_progress">بدء المعالجة</button>` : ''}${['volunteer','partner'].includes(r.kind) ? `<button class="btn s sm" data-iq="${r.id}" data-iqs="accepted">قبول</button><button class="btn o sm" data-iq="${r.id}" data-iqs="rejected">اعتذار</button>` : `<button class="btn s sm" data-iq="${r.id}" data-iqs="closed">إغلاق بعد الرد</button>`}`}</td></tr>`).join('')}</tbody></table></div>` : '<p class="small">لا توجد طلبات من الزوار بعد.</p>') + '</div>';
+}
+document.addEventListener('click', async e => {
+  const b = e.target.closest('[data-iq]'); if(!b) return;
+  const st = b.dataset.iqs; let note = '';
+  if(st !== 'in_progress'){ note = await prompt2(st === 'rejected' ? 'rejected' : 'reply'); if(note === null) return; }
+  b.disabled = true;
+  try{ await QDB.updInquiry(b.dataset.iq, {status:st, staff_note:note, handled_by: QDB.mode === 'live' ? S.uid : null}); INQ = await QDB.inquiries(); renderInq(); }catch(err){ b.disabled = false; }
+});
+async function loadInq(){ if(!S.isAdmin) return; try{ INQ = await QDB.inquiries(); renderInq(); }catch(e){} }
+
+/* ===== المستودع الرقمي ===== */
+const KNOW = [
+  ...PROGS.EX.map(p => ({t: /وريف/.test(p[1]) ? 'audio' : 'video', title:p[0], desc:p[7], ch:p[1], prog:p[0]})),
+  {t:'article', title:'تربية الأطفال في العصر الرقمي', desc:'التعامل الواعي مع أثر التقنية على الأطفال داخل الأسرة.', ch:'مقالات قنوان'},
+  {t:'article', title:'كيف نغرس القيم في يوم الطفل', desc:'مواقف يومية بسيطة تتحول إلى دروس في الأخلاق والآداب.', ch:'مقالات قنوان'},
+  {t:'guide', title:'دليل الوالدين الشامل', desc:'نصائح وإرشادات عملية للوالدين في التربية المتوازنة.', ch:'أدلة قنوان'},
+  {t:'guide', title:'دليل الاستفادة من مجالس السماع', desc:'كيف تتابع المجالس العلمية وتدوّن فوائدها.', ch:'أدلة قنوان'},
+  {t:'sheet', title:'دفتر حياتي قيم للأنشطة', desc:'أنشطة مطبوعة مصاحبة لبرنامج حياتي قيم.', ch:'متجر قنوان', store:true},
+  {t:'sheet', title:'بطاقات عاداتي عباداتي', desc:'بطاقات مطبوعة لترسيخ العادات اليومية لدى الطفل.', ch:'متجر قنوان', store:true}
+];
+const KT = {all:'الكل', article:'مقالات', video:'فيديوهات', audio:'صوتيات', guide:'أدلة', sheet:'أوراق عمل'};
+const KCHIP = {article:'مقالة', video:'فيديو', audio:'صوتي', guide:'دليل', sheet:'ورقة عمل'};
+let KF = 'all';
+function renderKnow(){
+  const g = $('#kGrid'); if(!g) return;
+  const q = ($('#ks')?.value || '').trim();
+  const list = KNOW.filter(k => (KF === 'all' || k.t === KF) && (!q || (k.title + ' ' + k.desc + ' ' + k.ch).includes(q)));
+  $$('#kTabs [data-kf]').forEach(b => b.setAttribute('aria-pressed', b.dataset.kf === KF));
+  g.innerHTML = list.length ? list.map((k, i) => `<div class="pcard${k.prog ? ' pc-click' : ''}"${k.prog ? ` data-p="${esc(k.prog)}" tabindex="0" role="button"` : ''}><div class="ph${i % 2 ? ' w' : ''}"></div><div class="pb"><span class="chip">${KCHIP[k.t]}</span><h3>${esc(k.title)}</h3><p class="small">${esc(k.desc)}</p><p class="small" style="margin-top:auto">${esc(k.ch)}</p>${k.prog ? '<span class="small" style="color:var(--plum);font-weight:700">التفاصيل ←</span>' : k.store ? '<button class="btn o sm" data-pv="store" style="align-self:flex-start">في المتجر ←</button>' : '<span class="chip a" style="align-self:flex-start">يُنشر قريبًا</span>'}</div></div>`).join('') : empty('لا توجد نتائج مطابقة.');
+}
+document.addEventListener('click', e => { const b = e.target.closest('#kTabs [data-kf]'); if(b){ KF = b.dataset.kf; renderKnow(); } });
+document.addEventListener('input', e => { if(e.target.id === 'ks') renderKnow(); });
+
+const _rws0 = renderWS; renderWS = function(){ _rws0(); renderInq(); };
 
 /* ===== مساحة العمل ===== */
 const famName = f => f.name || 'حساب بلا اسم';
@@ -1755,9 +1865,10 @@ function renderBand(){
   if(QDB.mode === 'local'){ b.textContent = 'وضع العرض: البيانات تُحفظ في هذا المتصفح، والدفع تجريبي لا يخصم مبالغ.'; b.className = 'statusband warn'; b.hidden = false; return; }
   b.hidden = true;
 }
-function renderAll(){ renderBand(); renderProgs(); renderCourses(); renderStore(); renderLogin(); renderStaff(); renderMe(); renderWS(); }
+function renderAll(){ renderBand(); renderProgs(); renderCourses(); renderStore(); renderLogin(); renderStaff(); renderMe(); renderWS(); renderIdBlocks(); renderKnow(); }
 
 const EN = {
+'يتولى مجلس الإدارة الإشراف على أعمال الجمعية وفق لائحتها الأساسية المعتمدة من المركز الوطني لتنمية القطاع غير الربحي.':'The Board of Directors oversees the association under its bylaws approved by the National Center for Non-Profit Sector.','عضو مجلس الإدارة':'Board member','الشراكات':'Partnerships','أوراق عمل':'Worksheets',
 'البرامج':'Programs',
 'الأكاديمية':'Academy',
 'محتوى مرئي قصير موجه للطفل وأسرته، يغرس القيم والعادات ويعرّف بالسيرة النبوية، في حلقات متوسط مدتها نحو سبع دقائق.':"Short videos for children and their families that build values and habits and introduce the Prophet's life, in episodes of about seven minutes.",
@@ -1891,6 +2002,7 @@ async function bootSession(noRender){
     setTimeout(() => { if(first){ first = false; S.ready = true; res(); } }, 10000);
   });
   if(S.isAdmin) SUBS.push(QDB.collection('fam').onSnapshot(s => { S.all = s.docs.map(d => d.data()).filter(d => d && d.uid); renderWS(); }, () => {}));
+  if(S.isAdmin){ loadInq(); const iv = setInterval(loadInq, 30000); SUBS.push(() => clearInterval(iv)); } else INQ = [];
 }
 
 (async () => {
