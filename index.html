@@ -446,6 +446,8 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
 .fld select,.fld input:not([type=checkbox]):not([type=radio]),.fld textarea{width:100%;max-width:100%;min-width:0;box-sizing:border-box;text-overflow:ellipsis}
 .card.wsec{margin-bottom:18px}.card.wsec h3{margin-bottom:12px}
 @media (max-width:1240px){[id^="w-"] .g2{grid-template-columns:1fr}}
+[id^="w-"] .g2{align-items:stretch!important}#s-ws .tbl{min-width:720px}#s-ws .tbl th,#s-ws .tbl td:first-child,#s-ws .tbl .chip{white-space:nowrap}#s-ws .tbl td:last-child{min-width:200px;width:220px;max-width:240px;white-space:normal}#s-ws .tbl td:last-child .btn{margin:2px}
+#s-ws .scroll{overflow-x:auto;border-radius:12px}
 /* ضبط القياس الموحد لمساحة العمل ومساحتي */
 .wpane{max-width:1180px;margin-inline:auto}
 #s-ws .card,#s-me .card{padding:20px 22px}
@@ -455,8 +457,8 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
 #s-ws .tbl,#s-me .tbl{font-size:.86rem}
 #s-ws .tbl th,#s-ws .tbl td{padding:9px 12px}
 #s-ws .btn.sm,#s-me .btn.sm{font-size:.84rem}
-@media (max-width:1180px) and (min-width:981px){
-  .ws{grid-template-columns:200px minmax(0,1fr)}
+@media (max-width:1180px) and (min-width:861px){
+  .ws{grid-template-columns:196px minmax(0,1fr)}
   .side{padding:14px 10px}
   .side .lb,.side .grp{display:block}
   .side .grp + .it{margin-top:0}
@@ -473,7 +475,11 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
 .pnav button svg{width:18px;height:18px;flex:none}
 .pnav button:hover{background:var(--lime-l);color:var(--leaf)}
 .pnav button[aria-current=page]{background:var(--leaf-l);color:var(--leaf);font-weight:600}
-@media (min-width:1321px){.pub-h .wrap{flex-wrap:wrap;row-gap:0}.pub-h .wrap>.pnav{order:3;flex:1 0 100%;justify-content:center;gap:6px;padding:8px 0 10px;margin-top:10px;border-top:1px solid var(--line)}.pnav button{padding:9px 16px}}
+@media (min-width:1321px){.pub-h .wrap{gap:14px}.pub-h .wrap>.pnav{flex:1;justify-content:center;gap:4px}
+.pnav button{padding:9px 14px;border-radius:12px;font-size:.98rem;color:var(--ink);font-weight:600}
+.pnav button:hover{background:var(--lime-l);color:var(--leaf)}
+.pnav button[aria-current=page]{background:var(--violet-l);color:var(--plum);font-weight:700}}
+@media (min-width:1321px) and (max-width:1480px){.pnav button{padding:8px 9px;font-size:.92rem}.pub-h .brand small{display:none}}
 @media (max-width:1320px){.pnav{gap:4px}.pnav button{padding:11px 12px;font-size:.95rem}}
 </style>
 <script src="config.js"></script>
@@ -509,23 +515,23 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
 <div class="statusband" id="statusBand" role="status" hidden></div>
 <!-- ================= الموقع العام ================= -->
 <section class="surface" id="s-pub">
-  <div class="utilbar gut"><div class="wrap"><span data-i>الرقم الوطني الموحد 7043445100</span><span class="ul"><button data-pv="contact" data-i>المقترحات والشكاوى</button><button data-pv="contact" data-i>تواصل معنا</button><button data-jump="stafflogin" data-i>دخول فريق العمل</button></span></div></div>
+  <div class="utilbar gut"><div class="wrap"><span data-i>الرقم الوطني الموحد 7043445100</span><span class="ul"><button data-pv="give" data-tab="d2" data-i>تطوع معنا</button><button data-pv="contact" data-i>المقترحات والشكاوى</button><button data-pv="contact" data-i>تواصل معنا</button><button data-jump="stafflogin" data-i>دخول فريق العمل</button></span></div></div>
   <header class="pub-h gut">
     <div class="wrap">
       <button class="brand" data-pv="home" aria-label="الرئيسية"><img data-logo="dark" alt="شعار جمعية قنوان"><span><b data-i>جمعية قنوان</b><small data-i>للتنمية والتعليم</small></span></button>
       <nav class="pnav" id="pnav" aria-label="القائمة الرئيسية">
-        <button data-pv="home" aria-current="page"><svg aria-hidden="true"><use href="#i-home"/></svg><span data-i>الرئيسية</span></button>
-        <button data-pv="about"><svg aria-hidden="true"><use href="#i-users"/></svg><span data-i>من نحن</span></button>
-        <button data-pv="programs"><svg aria-hidden="true"><use href="#i-layers"/></svg><span data-i>البرامج</span></button>
-        <button data-pv="academy"><svg aria-hidden="true"><use href="#i-book"/></svg><span data-i>الأكاديمية</span></button>
-        <button data-pv="store"><svg aria-hidden="true"><use href="#i-cart"/></svg><span data-i>المتجر</span></button>
-        <button data-pv="know"><svg aria-hidden="true"><use href="#i-lib"/></svg><span data-i>المستودع الرقمي</span></button>
-        <button data-pv="gov"><svg aria-hidden="true"><use href="#i-chart"/></svg><span data-i>الأثر والحوكمة</span></button>
-                <button data-pv="contact"><svg aria-hidden="true"><use href="#i-inbox"/></svg><span data-i>تواصل معنا</span></button>
+        <button data-pv="home" aria-current="page"><span data-i>الرئيسية</span></button>
+        <button data-pv="about"><span data-i>من نحن</span></button>
+        <button data-pv="programs"><span data-i>البرامج</span></button>
+        <button data-pv="academy"><span data-i>الأكاديمية</span></button>
+        <button data-pv="store"><span data-i>المتجر</span></button>
+        <button data-pv="know"><span data-i>المستودع الرقمي</span></button>
+        <button data-pv="gov"><span data-i>الأثر والحوكمة</span></button>
+                <button data-pv="contact"><span data-i>تواصل معنا</span></button>
       </nav>
       <div class="hcta">
         <button class="btn a" data-pv="give" data-tab="d1" data-i>تبرع الآن</button>
-        <button class="btn o" data-pv="give" data-tab="d2" data-i>تطوع معنا</button>
+        
         <button class="btn p sm" data-jump="login" data-i>دخول</button>
         <button class="lang" id="langBtn" aria-label="Switch to English"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg><span id="langLbl">EN</span></button>
         <button class="burger" id="burger" aria-expanded="false" aria-controls="pnav" aria-label="القائمة"><span></span><span></span><span></span></button>
@@ -545,7 +551,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
       </div>
       <div class="gut"><div class="wrap">
         <div class="doors">
-          <button class="door" data-pv="academy" data-tab="mufid"><span class="chip" data-i>للأسرة</span><span class="q" data-i>أنا ولي أمر</span><span class="small" data-i>برامج قيمية لطفلك تشاركين فيها، بتسجيل مجاني وتقدم تتابعينه.</span><span class="go" data-i>برامج المفيد ←</span></button>
+          <button class="door" data-pv="academy" data-tab="mufid"><span class="chip" data-i>للأسرة</span><span class="q" data-i>أنا ولي أمر</span><span class="small" data-i>برامج قيمية لطفلك تشارك فيها، بتسجيل مجاني وتقدم تتابعينه.</span><span class="go" data-i>برامج المفيد ←</span></button>
           <button class="door" data-pv="academy" data-tab="warif"><span class="chip v" data-i>لطالبة العلم</span><span class="q" data-i>أريد مجلسًا علميًا</span><span class="small" data-i>مجالس منتظمة في قراءة أمهات الكتب وشرحها بمقدمين مؤهلين.</span><span class="go" data-i>مجالس وريف العنادل ←</span></button>
           <button class="door" data-pv="give" data-tab="d1"><span class="chip g" data-i>للداعمين والشركاء</span><span class="q" data-i>أريد أن أسهم</span><span class="small" data-i>كفالة حلقة أو مجلس أو برنامج، أو تطوع، أو شراكة مؤسسية.</span><span class="go" data-i>طرق المساهمة ←</span></button>
         </div>
@@ -605,7 +611,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
       <div data-tp="a2" hidden><div class="timeline">
         <div class="tl"><span class="mk">1</span><div><h3 data-i>العمل البرامجي قبل الترخيص</h3><p data-i>نشأت قناتا المفيد ووريف العنادل وتكوّن جمهورهما قبل انطلاق الجمعية بأربع سنوات.</p></div></div>
         <div class="tl"><span class="mk">2</span><div><h3 data-i>التأسيس والترخيص</h3><p data-i>صدور ترخيص المركز الوطني لتنمية القطاع غير الربحي رقم 1000719000 بتاريخ 15/7/1446هـ.</p></div></div>
-        <div class="tl"><span class="mk">3</span><div><h3 data-i>البناء المؤسسي</h3><p data-i>إعداد الخطة الاستراتيجية 2025 ← 2029 والأدلة والسياسات والموازنات.</p></div></div>
+        <div class="tl"><span class="mk">3</span><div><h3 data-i>البناء المؤسسي</h3><p data-i>إعداد الخطة الاستراتيجية 2025-2029 والأدلة والسياسات والموازنات.</p></div></div>
         <div class="tl"><span class="mk">4</span><div><h3 data-i>المنصة الرقمية</h3><p data-i>إطلاق الموقع والأكاديمية والمتجر والمستودع الرقمي بعد اعتماد مجلس الإدارة.</p></div></div>
       </div></div>
       <div data-tp="a3" hidden><div class="kv" style="max-width:760px;margin:0 auto">
@@ -638,7 +644,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
     <!-- المتجر -->
     <div class="view" id="pv-store"><div class="band gut"><div class="wrap">
       <div class="title"><h2 data-i>متجر قنوان</h2><p data-i>الإصدارات المطبوعة والرقمية والدورات المدفوعة</p></div>
-      <div class="alert" style="margin-bottom:22px;text-align:center" data-i>بيئة دفع تجريبية: الأسعار تجريبية للتقييم، ولا تُخصم أي مبالغ.</div>
+      
       <div class="tabs" id="stTabs"><button aria-pressed="true" data-st="" data-i>الكل</button><button aria-pressed="false" data-st="course" data-i>الدورات</button><button aria-pressed="false" data-st="print" data-i>الكتب المطبوعة</button><button aria-pressed="false" data-st="digital" data-i>الكتب الرقمية</button></div>
       <div class="storelay">
         <div class="grid g2" id="sGrid"></div>
@@ -791,7 +797,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
       <div>
         <h2>قنوان دانية</h2>
         <p style="font-size:1.1rem">لنقطف لكم من أطايب الثمر</p>
-        <div class="perks"><span>تابعي تعلم أطفالك وتقدمهم في مكان واحد</span><span>اعرفي حالة كل طلب وخطوته التالية</span><span>كتبك الرقمية ودوراتك متاحة متى شئتِ</span><span>إيصالات تبرعك وتقارير أثره</span></div>
+        <div class="perks"><span>تابع تعلم أطفالك وتقدمهم في مكان واحد</span><span>اعرف حالة كل طلب وخطوته التالية</span><span>كتبك الرقمية ودوراتك متاحة متى شئت</span><span>إيصالات تبرعك وتقارير أثره</span></div>
       </div>
       <p class="small" style="color:rgba(255,255,255,.75)">جمعية قنوان للتنمية والتعليم | ترخيص 1000719000</p>
     </div>
@@ -861,7 +867,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
       <button class="brand" data-jump="pub" aria-label="الموقع العام"><img data-logo="dark" alt=""><span><b style="font-size:1.05rem">مساحة العمل</b><small>جمعية قنوان</small></span></button>
       <label class="ws-search"><svg><use href="#i-search"/></svg><input type="search" id="wsQ" placeholder="ابحث باسم مستفيد أو رقم طلب" aria-label="بحث"></label>
       <span class="sp"></span>
-      <div class="userchip"><span class="av" id="wsAv">م</span><span class="uname"><b id="wsName">أنتِ</b><small id="wsRole">مدير المنصة</small></span></div>
+      <div class="userchip"><span class="av" id="wsAv">م</span><span class="uname"><b id="wsName">أنت</b><small id="wsRole">مدير المنصة</small></span></div>
       <button class="iconb" data-logout="stafflogin" aria-label="تبديل الدور" title="تبديل الدور"><svg><use href="#i-out"/></svg></button>
     </div>
   </header>
@@ -1032,8 +1038,8 @@ const CAT0 = {
 };
 
 const RS = {pending:['بانتظار المراجعة','a'], info:['مطلوب استكمال','a'], accepted:['مقبول','g'], rejected:['معتذر عنه','v'], waitlist:['قائمة الانتظار','v']};
-const OS = {awaiting_payment:['بانتظار الدفع','a'], awaiting_transfer:['بانتظار تأكيد التحويل','a'], paid:['مدفوع (تجريبي)','g'], refunded:['مسترد','v'], cancelled:['ملغى','v']};
-const DS = {awaiting_payment:['بانتظار الدفع','a'], awaiting_transfer:['بانتظار المطابقة','a'], received:['مستلم (تجريبي)','g'], reconciled:['مطابق ماليًا','g'], failed:['لم يكتمل','v']};
+const OS = {awaiting_payment:['بانتظار الدفع','a'], awaiting_transfer:['بانتظار تأكيد التحويل','a'], paid:['مدفوع','g'], refunded:['مسترد','v'], cancelled:['ملغى','v']};
+const DS = {awaiting_payment:['بانتظار الدفع','a'], awaiting_transfer:['بانتظار المطابقة','a'], received:['مستلم','g'], reconciled:['مطابق ماليًا','g'], failed:['لم يكتمل','v']};
 const SS = {none:'', preparing:'قيد التجهيز', shipped:'تم الشحن', delivered:'تم التسليم'};
 const chip = (m, k) => { const v = m[k] || [k, 'v']; return `<span class="chip ${v[1]}">${esc(v[0])}</span>`; };
 const AC = {mufid:'المفيد للأسرة والجيل الجديد', warif:'وريف العنادل'};
@@ -1167,7 +1173,7 @@ function renderStore(){
   $('#sGrid').innerHTML = products().filter(p => p.published && (!STF || p.type === STF)).map(p => {
     const own = owned[p.id] && !owned[p.id].revoked && p.type !== 'print';
     const out = p.type === 'print' && (p.stock ?? 0) <= 0;
-    return `<div class="pcard"><div class="ph${p.type === 'course' ? ' w' : ''}"></div><div class="pb"><div class="pmeta"><span class="chip v">${PT[p.type]}</span>${p.type === 'print' ? `<span class="chip ${out ? 'a' : 'g'}">${out ? 'نفد المخزون' : 'متوفر'}</span>` : ''}</div><h3>${esc(p.name)}</h3><p class="small">${esc(p.desc)}</p><div class="foot"><span class="price">${sar(p.price)} <span class="small" style="font-weight:400">تجريبي</span></span>${own ? `<button class="btn s sm" ${p.type === 'course' ? `data-golearn="${p.course}"` : 'data-gome="m5"'}>${p.type === 'course' ? 'ادخل الدورة' : 'في مكتبتك'}</button>` : `<button class="btn p sm" data-add="${p.id}" ${out ? 'disabled' : ''}>أضف للسلة</button>`}</div></div></div>`;
+    return `<div class="pcard"><div class="ph${p.type === 'course' ? ' w' : ''}"></div><div class="pb"><div class="pmeta"><span class="chip v">${PT[p.type]}</span>${p.type === 'print' ? `<span class="chip ${out ? 'a' : 'g'}">${out ? 'نفد المخزون' : 'متوفر'}</span>` : ''}</div><h3>${esc(p.name)}</h3><p class="small">${esc(p.desc)}</p><div class="foot"><span class="price">${sar(p.price)}</span>${own ? `<button class="btn s sm" ${p.type === 'course' ? `data-golearn="${p.course}"` : 'data-gome="m5"'}>${p.type === 'course' ? 'ادخل الدورة' : 'في مكتبتك'}</button>` : `<button class="btn p sm" data-add="${p.id}" ${out ? 'disabled' : ''}>أضف للسلة</button>`}</div></div></div>`;
   }).join('');
   renderCart();
 }
@@ -1211,21 +1217,21 @@ function saveCat(patch){
 }
 // يتطلب حسابًا على المنصة قبل أي نموذج
 function needAccount(m){
-  if(!S.uid){ showMsg(m, 'سجّلي الدخول أو أنشئي حسابك من زر «دخول» أولًا.', false); setTimeout(() => mode('login'), 1400); return false; }
-  if(!S.me?.name){ showMsg(m, 'أنشئي حسابك في المنصة أولًا من زر «دخول».', false); setTimeout(() => mode('login'), 1400); return false; }
+  if(!S.uid){ showMsg(m, 'سجّل الدخول أو أنشئ حسابك من زر «دخول» أولًا.', false); setTimeout(() => mode('login'), 1400); return false; }
+  if(!S.me?.name){ showMsg(m, 'أنشئ حسابك في المنصة أولًا من زر «دخول».', false); setTimeout(() => mode('login'), 1400); return false; }
   return true;
 }
 
 /* ===== دخول المستفيد وإنشاء الحساب (حسابات حقيقية) ===== */
 let AUTHTAB = 'in', RECOVER = false;
-const AUTHERR = e => { const c = (e?.code || '') + ' ' + (e?.message || ''); if(/invalid_credentials|Invalid login/i.test(c)) return 'البريد أو كلمة المرور غير صحيحة.'; if(/already|exists|registered/i.test(c)) return 'هذا البريد مسجل مسبقًا. استخدمي «دخول» أو «نسيت كلمة المرور».'; if(/not confirmed|email_not_confirmed/i.test(c)) return 'لم يُؤكَّد البريد بعد. افتحي رسالة التأكيد في بريدك ثم سجّلي الدخول.'; if(/weak|password/i.test(c)) return 'كلمة المرور ضعيفة: استخدمي 8 أحرف على الأقل.'; if(/rate|too many/i.test(c)) return 'محاولات كثيرة. انتظري دقيقة ثم أعيدي المحاولة.'; return 'تعذر إتمام العملية. تحققي من الاتصال وأعيدي المحاولة.'; };
+const AUTHERR = e => { const c = (e?.code || '') + ' ' + (e?.message || ''); if(/invalid_credentials|Invalid login/i.test(c)) return 'البريد أو كلمة المرور غير صحيحة.'; if(/already|exists|registered/i.test(c)) return 'هذا البريد مسجل مسبقًا. استخدم «دخول» أو «نسيت كلمة المرور».'; if(/not confirmed|email_not_confirmed/i.test(c)) return 'لم يُؤكَّد البريد بعد. افتح رسالة التأكيد في بريدك ثم سجّل الدخول.'; if(/weak|password/i.test(c)) return 'كلمة المرور ضعيفة: استخدم 8 أحرف على الأقل.'; if(/rate|too many/i.test(c)) return 'محاولات كثيرة. انتظر دقيقة ثم أعد المحاولة.'; return 'تعذر إتمام العملية. تحقق من الاتصال وأعيدي المحاولة.'; };
 const localNote = () => QDB.mode === 'local' ? '<p class="small note" style="padding:10px 12px;border-radius:10px">وضع العرض: الحسابات والبيانات تُحفظ في هذا المتصفح حتى يُربط الموقع بقاعدة البيانات المركزية.</p>' : '';
 const tabsHtml = staff => `<div class="seg" role="tablist" style="display:flex;gap:6px;background:var(--lime-l,#EEF4DC);padding:5px;border-radius:12px">${[['in', 'دخول'], ['up', staff ? 'تسجيل موظف' : 'حساب جديد'], ['fg', 'نسيت كلمة المرور']].map(([k, v]) => `<button type="button" role="tab" data-atab="${k}" aria-selected="${AUTHTAB === k}" class="btn sm ${AUTHTAB === k ? 'p' : 'o'}" style="flex:1">${v}</button>`).join('')}</div>`;
 const inForm = id => `<form id="${id}" class="auth-box" style="gap:12px" novalidate>
     <div class="fld"><label for="${id}-e">البريد الإلكتروني</label><input id="${id}-e" type="email" autocomplete="email" dir="ltr" required></div>
     <div class="fld"><label for="${id}-p">كلمة المرور</label><input id="${id}-p" type="password" autocomplete="current-password" dir="ltr" required></div>
     <button class="btn p" type="submit">دخول</button><div class="msg" id="${id}-m"></div></form>`;
-const fgForm = () => `<form id="f-fg" class="auth-box" style="gap:12px" novalidate><p class="small">أدخلي بريدك وسنرسل إليه رابطًا لتعيين كلمة مرور جديدة.</p>
+const fgForm = () => `<form id="f-fg" class="auth-box" style="gap:12px" novalidate><p class="small">أدخل بريدك وسنرسل إليه رابطًا لتعيين كلمة مرور جديدة.</p>
     <div class="fld"><label for="fg-e">البريد الإلكتروني</label><input id="fg-e" type="email" autocomplete="email" dir="ltr"></div>
     <button class="btn p" type="submit">إرسال الرابط</button><div class="msg" id="fg-m"></div></form>`;
 const profFields = withCred => `
@@ -1243,11 +1249,11 @@ function renderLogin(){
     b.innerHTML = `<div><h1 style="font-size:1.6rem">تعيين كلمة مرور جديدة</h1></div><form id="f-np" class="auth-box" style="gap:12px" novalidate><div class="fld"><label for="np-p">كلمة المرور الجديدة</label><input id="np-p" type="password" autocomplete="new-password" dir="ltr"></div><button class="btn p" type="submit">حفظ</button><div class="msg" id="np-m"></div></form>`; return;
   }
   if(S.uid && S.me?.name){
-    b.innerHTML = `<div><h1 style="font-size:1.6rem">مرحبًا ${esc(S.me.name)}</h1><p class="small">حسابك جاهز (${esc(S.email)}). تابعي تعلمك وطلباتك ومشترياتك.</p></div><button class="btn p" data-jump="me">الدخول إلى مساحتي</button><button class="btn o" data-signout>تسجيل الخروج</button>`;
+    b.innerHTML = `<div><h1 style="font-size:1.6rem">مرحبًا ${esc(S.me.name)}</h1><p class="small">حسابك جاهز (${esc(S.email)}). تابع تعلمك وطلباتك ومشترياتك.</p></div><button class="btn p" data-jump="me">الدخول إلى مساحتي</button><button class="btn o" data-signout>تسجيل الخروج</button>`;
     return;
   }
   if(S.uid){
-    b.innerHTML = `<div><h1 style="font-size:1.6rem">أكملي بيانات حسابك</h1><p class="small">سجّلتِ الدخول بالبريد ${esc(S.email)}. بقيت بيانات قليلة لتجهيز مساحتك.</p></div>
+    b.innerHTML = `<div><h1 style="font-size:1.6rem">أكمل بيانات حسابك</h1><p class="small">سجّلت الدخول بالبريد ${esc(S.email)}. بقيت بيانات قليلة لتجهيز مساحتك.</p></div>
     <form id="f-up" data-complete="1" class="auth-box" style="gap:12px" novalidate>${profFields(false)}<button class="btn s" type="submit">حفظ ومتابعة</button><div class="msg" id="suMsg"></div></form><button class="btn o sm" data-signout>تسجيل الخروج</button>`;
     return;
   }
@@ -1265,13 +1271,13 @@ document.addEventListener('submit', async e => {
   const id = e.target.id;
   if(id === 'f-in' || id === 'f-sin'){ e.preventDefault();
     const m = $('#' + id + '-m'), email = $('#' + id + '-e').value.trim(), pw = $('#' + id + '-p').value;
-    if(!email || !pw) return showMsg(m, 'أدخلي البريد وكلمة المرور.', false);
+    if(!email || !pw) return showMsg(m, 'أدخل البريد وكلمة المرور.', false);
     const btn = e.target.querySelector('button[type=submit]'); btn.disabled = true;
     try{ await QDB.signIn(email, pw); await bootSession(); if(id === 'f-in') S.goMe = true; else mode('stafflogin'); if(id === 'f-in' && S.me) { S.goMe = false; mode('me'); } }catch(err){ showMsg(m, AUTHERR(err), false); }
     btn.disabled = false; return;
   }
   if(id === 'f-fg'){ e.preventDefault(); const m = $('#fg-m'), email = $('#fg-e').value.trim();
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return showMsg(m, 'أدخلي بريدًا صحيحًا.', false);
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return showMsg(m, 'أدخل بريدًا صحيحًا.', false);
     if(QDB.mode === 'local') return showMsg(m, 'الاستعادة بالبريد تعمل بعد ربط الموقع بقاعدة البيانات المركزية.', false);
     try{ await QDB.reset(email); showMsg(m, 'أرسلنا رابط الاستعادة إلى بريدك إن كان مسجلًا لدينا.', true); }catch(err){ showMsg(m, AUTHERR(err), false); } return;
   }
@@ -1282,11 +1288,11 @@ document.addEventListener('submit', async e => {
   if(id !== 'f-up') return; e.preventDefault();
   const complete = !!e.target.dataset.complete;
   const m = $('#suMsg'), name = $('#su-n').value.trim(), phone = $('#su-p').value.trim().replace(/\s/g, '');
-  if(!name) return showMsg(m, 'أدخلي الاسم.', false);
-  if(!/^05\d{8}$/.test(phone)) return showMsg(m, 'أدخلي رقم جوال سعودي صحيح يبدأ بـ 05.', false);
+  if(!name) return showMsg(m, 'أدخل الاسم.', false);
+  if(!/^05\d{8}$/.test(phone)) return showMsg(m, 'أدخل رقم جوال سعودي صحيح يبدأ بـ 05.', false);
   let email = S.email, pw = '';
   if(!complete){ email = $('#su-e').value.trim(); pw = $('#su-w').value;
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return showMsg(m, 'أدخلي بريدًا إلكترونيًا صحيحًا.', false);
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return showMsg(m, 'أدخل بريدًا إلكترونيًا صحيحًا.', false);
     if(pw.length < 8) return showMsg(m, 'كلمة المرور 8 أحرف على الأقل.', false); }
   if(!$('#su-ok').checked) return showMsg(m, 'يلزم الموافقة على سياسة الخصوصية.', false);
   const purposes = {}; $$('#f-up .types input:checked').forEach(i => purposes[i.value] = true);
@@ -1295,7 +1301,7 @@ document.addEventListener('submit', async e => {
   try{
     if(!complete){
       const r = await QDB.signUp(email, pw, {name, phone, purposes, consentAt:profile.consentAt});
-      if(!r.session){ btn.disabled = false; AUTHTAB = 'in'; renderLogin(); showMsg($('#f-in-m'), 'أنشأنا حسابك. أرسلنا رسالة تأكيد إلى ' + email + '؛ افتحيها ثم سجّلي الدخول هنا.', true); return; }
+      if(!r.session){ btn.disabled = false; AUTHTAB = 'in'; renderLogin(); showMsg($('#f-in-m'), 'أنشأنا حسابك. أرسلنا رسالة تأكيد إلى ' + email + '؛ افتحيها ثم سجّل الدخول هنا.', true); return; }
       await bootSession(true);
     }
     const staffUp = !!e.target.dataset.staff; S.goMe = !staffUp; await writeMe({...profile, ...auditSelf('إنشاء حساب')}); if(staffUp){ S.goMe = false; AUTHTAB = 'in'; renderStaff(); } else if(S.me) { S.goMe = false; mode('me'); }
@@ -1312,10 +1318,10 @@ function renderStaff(){
   if(CUR !== 'stafflogin'){ b.innerHTML = ''; return; }
   if(!S.ready){ b.innerHTML = '<p class="small">جارٍ التحقق من صلاحيتك…</p>'; return; }
   if(!S.uid){
-    b.innerHTML = `<div><h1 style="font-size:1.6rem">${AUTHTAB === 'up' ? 'تسجيل موظف جديد' : 'دخول فريق العمل'}</h1><p class="small">${AUTHTAB === 'up' ? 'أنشئي حسابك ببريدك، ثم يُسند إليك مدير المنصة دورك من «الحسابات»، فتظهر لك مساحة العمل عند الدخول.' : 'ادخلي بحسابك في المنصة. تظهر مساحة العمل لمن أسند إليه مدير المنصة دورًا.'}</p></div>${tabsHtml(true)}${AUTHTAB === 'fg' ? fgForm() : AUTHTAB === 'up' ? `<form id="f-up" data-staff="1" class="auth-box" style="gap:12px" novalidate>${profFields(true)}<button class="btn s" type="submit">إنشاء الحساب</button><div class="msg" id="suMsg"></div></form>` : inForm('f-sin')}${localNote()}`; return; }
-  if(!S.isAdmin){ b.innerHTML = `<div><h1 style="font-size:1.6rem">دخول فريق العمل</h1><p class="small">حسابك ${esc(S.email)} جاهز، ولم يُسند إليه دور في فريق العمل بعد. أرسلي هذا البريد إلى مدير المنصة ليسند إليك دورك من «الحسابات»، ثم ادخلي من هنا.</p></div><button class="btn o" data-jump="pub">العودة للموقع</button><button class="btn o sm" data-signout>تسجيل الخروج</button>`; return; }
+    b.innerHTML = `<div><h1 style="font-size:1.6rem">${AUTHTAB === 'up' ? 'تسجيل موظف جديد' : 'دخول فريق العمل'}</h1><p class="small">${AUTHTAB === 'up' ? 'أنشئ حسابك ببريدك، ثم يُسند إليك مدير المنصة دورك من «الحسابات»، فتظهر لك مساحة العمل عند الدخول.' : 'ادخل بحسابك في المنصة. تظهر مساحة العمل لمن أسند إليه مدير المنصة دورًا.'}</p></div>${tabsHtml(true)}${AUTHTAB === 'fg' ? fgForm() : AUTHTAB === 'up' ? `<form id="f-up" data-staff="1" class="auth-box" style="gap:12px" novalidate>${profFields(true)}<button class="btn s" type="submit">إنشاء الحساب</button><div class="msg" id="suMsg"></div></form>` : inForm('f-sin')}${localNote()}`; return; }
+  if(!S.isAdmin){ b.innerHTML = `<div><h1 style="font-size:1.6rem">دخول فريق العمل</h1><p class="small">حسابك ${esc(S.email)} جاهز، ولم يُسند إليه دور في فريق العمل بعد. أرسل هذا البريد إلى مدير المنصة ليسند إليك دورك من «الحسابات»، ثم ادخل من هنا.</p></div><button class="btn o" data-jump="pub">العودة للموقع</button><button class="btn o sm" data-signout>تسجيل الخروج</button>`; return; }
   const rs = myRoles(); if(!rs.includes(PICK)) PICK = rs[0];
-  b.innerHTML = `<div><h1 style="font-size:1.6rem">دخول فريق العمل</h1><p class="small">مرحبًا ${esc(S.me?.name || S.meta?.name || S.email)}. اختاري الدور الذي تدخلين به؛ يحدد الدور الأقسام التي تظهر لك.</p></div>
+  b.innerHTML = `<div><h1 style="font-size:1.6rem">دخول فريق العمل</h1><p class="small">مرحبًا ${esc(S.me?.name || S.meta?.name || S.email)}. اختر الدور الذي تدخل به؛ يحدد الدور الأقسام التي تظهر لك.</p></div>
   <div class="demo"><h4>أدوارك المسندة</h4><div class="demo-list">${rs.map(k => `<button type="button" data-role="${k}" aria-pressed="${k === PICK}"><b>${ROLES[k][0]}</b><small style="direction:rtl">${ROLES[k][1]}</small></button>`).join('')}</div></div>
   <button class="btn p" id="st-go">دخول مساحة العمل</button><button class="btn o sm" data-signout>تسجيل الخروج</button>`;
 }
@@ -1336,14 +1342,14 @@ async function renderTeam(refresh){
   <form id="teamForm" class="fgrid" novalidate><div class="fld full"><label for="tmE">بريد العضو</label><input id="tmE" type="email" dir="ltr"></div>
   <div class="fld full"><label>الأدوار</label><div class="types">${Object.entries(ROLES).map(([k, v]) => `<label><input type="checkbox" value="${k}"> ${v[0]}</label>`).join('')}</div></div>
   <div class="full"><button class="btn p sm" type="submit">إسناد الأدوار</button></div><div class="msg full" id="tmMsg"></div></form>
-  ${list.length ? `<div class="scroll"><table class="tbl"><thead><tr><th>العضو</th><th>البريد</th><th>الأدوار</th><th></th></tr></thead><tbody>${list.map(s => `<tr><td>${esc(s.name || '')}</td><td dir="ltr" style="text-align:right">${esc(s.email)}</td><td>${(s.roles || []).map(r => ROLES[r]?.[0] || r).join('، ')}</td><td>${s.email === S.email ? '<span class="small">أنتِ</span>' : `<button class="btn o sm" data-revoke="${esc(s.email)}">إلغاء</button>`}</td></tr>`).join('')}</tbody></table></div>` : ''}</div>`;
+  ${list.length ? `<div class="scroll"><table class="tbl"><thead><tr><th>العضو</th><th>البريد</th><th>الأدوار</th><th></th></tr></thead><tbody>${list.map(s => `<tr><td>${esc(s.name || '')}</td><td dir="ltr" style="text-align:right">${esc(s.email)}</td><td>${(s.roles || []).map(r => ROLES[r]?.[0] || r).join('، ')}</td><td>${s.email === S.email ? '<span class="small">أنت</span>' : `<button class="btn o sm" data-revoke="${esc(s.email)}">إلغاء</button>`}</td></tr>`).join('')}</tbody></table></div>` : ''}</div>`;
 }
 document.addEventListener('submit', async e => {
   if(e.target.id !== 'teamForm') return; e.preventDefault();
   const m = $('#tmMsg'), email = $('#tmE').value.trim(), roles = $$('#teamForm .types input:checked').map(i => i.value);
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return showMsg(m, 'أدخلي بريدًا صحيحًا.', false);
-  if(!roles.length) return showMsg(m, 'اختاري دورًا واحدًا على الأقل.', false);
-  try{ const r = await QDB.grant(email, roles); if(r === 'not_found') return showMsg(m, 'لا يوجد حساب بهذا البريد. اطلبي من العضو إنشاء حسابه أولًا.', false); await renderTeam(true); showMsg($('#tmMsg'), 'أُسندت الأدوار.', true); }catch(err){ showMsg(m, 'تعذر الإسناد.', false); }
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return showMsg(m, 'أدخل بريدًا صحيحًا.', false);
+  if(!roles.length) return showMsg(m, 'اختر دورًا واحدًا على الأقل.', false);
+  try{ const r = await QDB.grant(email, roles); if(r === 'not_found') return showMsg(m, 'لا يوجد حساب بهذا البريد. اطلب من العضو إنشاء حسابه أولًا.', false); await renderTeam(true); showMsg($('#tmMsg'), 'أُسندت الأدوار.', true); }catch(err){ showMsg(m, 'تعذر الإسناد.', false); }
 });
 document.addEventListener('click', async e => {
   const r = e.target.closest('[data-revoke]'); if(!r) return;
@@ -1363,11 +1369,11 @@ function applyRole(){
 /* ===== طلب التسجيل في دورة ===== */
 function regModal(cid){
   const c = course(cid); if(!c) return;
-  if(!S.me?.name){ modal(`<h2>سجّلي في «${esc(c.name)}»</h2><p style="margin:8px 0 14px">يلزم حساب في المنصة لتقديم طلب التسجيل ومتابعته.</p><button class="btn p" data-jump="login">إنشاء حساب أو الدخول</button>`); return; }
+  if(!S.me?.name){ modal(`<h2>سجّل في «${esc(c.name)}»</h2><p style="margin:8px 0 14px">يلزم حساب في المنصة لتقديم طلب التسجيل ومتابعته.</p><button class="btn p" data-jump="login">إنشاء حساب أو الدخول</button>`); return; }
   const kids = Object.values(S.me.kids || {});
   const who = c.kids ? (kids.length ? kids.map(k => `<option value="${k.id}">${esc(k.name)} (${esc(k.age)})</option>`).join('') : '') : `<option value="self">${esc(S.me.name)}</option>`;
   modal(`<span class="chip">${AC[c.ac]}</span><h2 style="margin:6px 0">طلب التسجيل في «${esc(c.name)}»</h2><p class="small">يُحفظ الطلب في «طلباتي»، ويراجعه فريق البرامج خلال 3 أيام عمل.</p>
-  ${c.kids && !kids.length ? `<div class="alert" style="margin-top:12px">هذه الدورة للأطفال. أضيفي طفلك أولًا من «أسرتي».</div><div style="margin-top:12px"><button class="btn s" data-jump="me" onclick="setTimeout(()=>meView('m3'),50)">إضافة طفل</button></div>` : `
+  ${c.kids && !kids.length ? `<div class="alert" style="margin-top:12px">هذه الدورة للأطفال. أضف طفلك أولًا من «أسرتي».</div><div style="margin-top:12px"><button class="btn s" data-jump="me" onclick="setTimeout(()=>meView('m3'),50)">إضافة طفل</button></div>` : `
   <form id="regForm" class="fgrid" novalidate data-c="${c.id}">
     <div class="fld full"><label for="rWho">المستفيد</label><select id="rWho">${who}</select></div>
     <div class="fld full"><label for="rNote">ملاحظات (اختياري)</label><textarea id="rNote" style="min-height:70px"></textarea></div>
@@ -1397,10 +1403,10 @@ $('#checkoutBtn').onclick = () => {
   if(!S.me?.name){ modal(`<h2>إتمام الشراء</h2><p style="margin:8px 0 14px">يلزم حساب في المنصة لإتمام الشراء، لتصلك مشترياتك الرقمية في «مكتبتي».</p><button class="btn p" data-jump="login">إنشاء حساب أو الدخول</button>`); return; }
   const hasPrint = S.cart.some(it => product(it.pid).type === 'print');
   const total = S.cart.reduce((s, it) => s + halalas(product(it.pid).price) * it.qty, 0) / 100;
-  modal(`<h2>إتمام الشراء</h2><p class="small">بيئة دفع تجريبية: لا تُخصم أي مبالغ.</p>
+  modal(`<h2>إتمام الشراء</h2>
   <div class="scroll" style="margin-top:10px"><table class="tbl"><tbody>${S.cart.map(it => { const p = product(it.pid); return `<tr><td>${esc(p.name)}</td><td>${it.qty}</td><td>${sar(p.price * it.qty)}</td></tr>`; }).join('')}<tr><td colspan="2"><b>الإجمالي</b></td><td><b>${sar(total)}</b></td></tr></tbody></table></div>
   <form id="coForm" class="fgrid" novalidate>
-    ${hasPrint ? `<div class="fld"><label for="shCity">المدينة</label><input type="text" id="shCity"></div><div class="fld"><label for="shTel">جوال المستلم</label><input type="tel" id="shTel" value="${esc(S.me.phone || '')}"></div><div class="fld full"><label for="shAddr">العنوان الوطني أو الوصف</label><input type="text" id="shAddr"></div><p class="small full">تكلفة الشحن بانتظار التعاقد مع شركة الشحن، وتظهر صفرًا في التقييم.</p>` : ''}
+    ${hasPrint ? `<div class="fld"><label for="shCity">المدينة</label><input type="text" id="shCity"></div><div class="fld"><label for="shTel">جوال المستلم</label><input type="tel" id="shTel" value="${esc(S.me.phone || '')}"></div><div class="fld full"><label for="shAddr">العنوان الوطني أو الوصف</label><input type="text" id="shAddr"></div><p class="small full">تُحتسب تكلفة الشحن وتُؤكد عند تجهيز الطلب.</p>` : ''}
     <div class="fld full"><label for="coPay">وسيلة الدفع</label><select id="coPay"><option value="mada">مدى</option><option value="card">بطاقة ائتمانية</option><option value="applepay">Apple Pay</option><option value="googlepay">Google Pay</option><option value="tabby">تابي: قسّمها على 4 دفعات</option><option value="tamara">تمارا: ادفع لاحقًا</option><option value="transfer">تحويل بنكي إلى حساب الجمعية</option></select></div>
     <div class="full"><button class="btn p" type="submit">تأكيد الطلب والانتقال للدفع</button></div><div class="msg full" id="coMsg"></div>
   </form>`);
@@ -1410,7 +1416,7 @@ document.addEventListener('submit', async e => {
   const m = $('#coMsg'); if(!needAccount(m)) return;
   const hasPrint = S.cart.some(it => product(it.pid).type === 'print');
   let ship = null;
-  if(hasPrint){ ship = {city:$('#shCity').value.trim(), tel:$('#shTel').value.trim(), addr:$('#shAddr').value.trim(), status:'none'}; if(!ship.city || !ship.addr || !ship.tel) return showMsg(m, 'أكملي بيانات الشحن.', false); }
+  if(hasPrint){ ship = {city:$('#shCity').value.trim(), tel:$('#shTel').value.trim(), addr:$('#shAddr').value.trim(), status:'none'}; if(!ship.city || !ship.addr || !ship.tel) return showMsg(m, 'أكمل بيانات الشحن.', false); }
   const method = $('#coPay').value, id = nid('o'), items = {};
   S.cart.forEach((it, i) => { const p = product(it.pid); items['i' + i] = {pid:p.id, name:p.name, type:p.type, qty:it.qty, price:p.price}; });
   const total = Object.values(items).reduce((s, x) => s + halalas(x.price) * x.qty, 0) / 100;
@@ -1428,14 +1434,14 @@ function payModal(kind, id, rec0){
     if(method === 'transfer'){
       modal(`<h2>التحويل البنكي</h2><p>رقم ${kind === 'order' ? 'الطلب' : 'التبرع'}: <b>${ref}</b> | المبلغ: <b>${sar(amount)}</b></p>
       <div class="kv" style="margin-top:10px"><div>المستفيد</div><div>جمعية قنوان للتنمية والتعليم</div><div>البنك</div><div>مصرف الراجحي</div><div>رقم الآيبان</div><div><span class="tag t-x">بانتظار الاعتماد</span></div></div>
-      <p class="src" style="margin-top:10px">اكتبي رقم ${kind === 'order' ? 'الطلب' : 'التبرع'} في وصف التحويل. يؤكد المسؤول المالي وصول المبلغ بمطابقته مع كشف الحساب، ولا يُعد إيصال التحويل وحده إثباتًا للوصول.</p>
+      <p class="src" style="margin-top:10px">اكتب رقم ${kind === 'order' ? 'الطلب' : 'التبرع'} في وصف التحويل. يؤكد المسؤول المالي وصول المبلغ بمطابقته مع كشف الحساب، ولا يُعد إيصال التحويل وحده إثباتًا للوصول.</p>
       <label for="trRef">رقم عملية التحويل (اختياري)</label><input type="text" id="trRef"><div class="actions"><button class="btn p" id="trSave" data-kind="${kind}" data-id="${id}">حفظ وإرسال للمراجعة</button></div><div class="msg" id="trMsg"></div>`);
       return;
     }
-    modal(`<div class="sandbox"><span class="tag t-x">بوابة دفع تجريبية</span><h2 style="margin-top:6px">${esc(PAY[method])}</h2><p>المبلغ: <b>${sar(amount)}</b> | المرجع: ${ref}</p>
-    ${method === 'tabby' ? `<p class="src">تقسيم تجريبي: 4 دفعات بقيمة ${sar(Math.round(halalas(amount) / 4) / 100)}</p>` : ''}
-    <p class="src">لا تُدخل بيانات بطاقة حقيقية. تحاكي هذه الشاشة رد بوابة الدفع، وتتحقق المنصة من حالة العملية قبل منح أي صلاحية.</p>
-    <div class="actions"><button class="btn g" data-sim="ok" data-kind="${kind}" data-id="${id}">محاكاة دفع ناجح</button><button class="btn s" data-sim="fail" data-kind="${kind}" data-id="${id}">محاكاة دفع مرفوض</button></div><div class="msg" id="simMsg"></div></div>`);
+    modal(`<div class="sandbox"><span class="tag t-x">الدفع الآمن</span><h2 style="margin-top:6px">${esc(PAY[method])}</h2><p>المبلغ: <b>${sar(amount)}</b> | المرجع: ${ref}</p>
+    ${method === 'tabby' ? `<p class="src">التقسيم: 4 دفعات بقيمة ${sar(Math.round(halalas(amount) / 4) / 100)}</p>` : ''}
+    <p class="src">راجع المبلغ ثم أكّد الدفع. تتحقق المنصة من حالة العملية قبل تفعيل مشترياتك.</p>
+    <div class="actions"><button class="btn p" data-sim="ok" data-kind="${kind}" data-id="${id}">تأكيد الدفع</button><button class="btn o" data-sim="fail" data-kind="${kind}" data-id="${id}">إلغاء العملية</button></div><div class="msg" id="simMsg"></div></div>`);
   }
 }
 async function grantOrder(o, actor){
@@ -1459,14 +1465,14 @@ document.addEventListener('click', async e => {
       if(kind === 'order'){
         const o = S.me.orders[id];
         if(o.status === 'paid'){ showMsg(m, 'هذا الطلب مدفوع مسبقًا، ولم يُكرر منح الصلاحيات.', true); return; }
-        if(ok){ const g = await grantOrder(o); await writeMe({orders:{[id]:{status:'paid', paidAt:now(), events:ev, ship: o.ship ? {status:'preparing'} : null}}, ents:g.ents, enroll:g.enroll, ...auditSelf('دفع تجريبي ناجح للطلب ' + id.slice(-6).toUpperCase())}); }
+        if(ok){ const g = await grantOrder(o); await writeMe({orders:{[id]:{status:'paid', paidAt:now(), events:ev, ship: o.ship ? {status:'preparing'} : null}}, ents:g.ents, enroll:g.enroll, ...auditSelf('دفع ناجح للطلب ' + id.slice(-6).toUpperCase())}); }
         else await writeMe({orders:{[id]:{events:ev}}});
       } else {
         const d = S.me.dons[id];
         if(d.status === 'received' || d.status === 'reconciled'){ showMsg(m, 'هذا التبرع مسجل مسبقًا.', true); return; }
-        await writeMe({dons:{[id]:{status: ok ? 'received' : 'failed', events:ev}}, ...auditSelf((ok ? 'تبرع تجريبي ناجح ' : 'تبرع تجريبي مرفوض ') + id.slice(-6).toUpperCase())});
+        await writeMe({dons:{[id]:{status: ok ? 'received' : 'failed', events:ev}}, ...auditSelf((ok ? 'تبرع ناجح ' : 'تبرع لم يكتمل ') + id.slice(-6).toUpperCase())});
       }
-      showMsg(m, ok ? (kind === 'order' ? 'تم الدفع التجريبي. أُضيفت مشترياتك الرقمية ودوراتك إلى حسابك.' : 'سُجل تبرعك التجريبي، وينتظر المطابقة المالية. جزاك الله خيرًا.') : 'رُفضت العملية التجريبية. يبقى الطلب بانتظار الدفع، ويمكنك إعادة المحاولة من «حسابي».', ok);
+      showMsg(m, ok ? (kind === 'order' ? 'تم الدفع بنجاح. أُضيفت مشترياتك الرقمية ودوراتك إلى حسابك.' : 'سُجل تبرعك، وينتظر المطابقة المالية. جزاك الله خيرًا.') : 'لم تكتمل عملية الدفع. يبقى الطلب بانتظار الدفع، ويمكنك إعادة المحاولة من «حسابي».', ok);
       setTimeout(() => { if(ok) { closeModal(); mode('me'); meView(kind === 'order' ? 'm5' : 'm6'); } else $$('[data-sim]').forEach(b => b.disabled = false); }, 1600);
     }catch(err){ showMsg(m, 'تعذر تسجيل العملية.', false); $$('[data-sim]').forEach(b => b.disabled = false); }
   }
@@ -1487,7 +1493,7 @@ document.addEventListener('click', async e => {
 $('#donForm').onsubmit = async e => {
   e.preventDefault(); const m = $('#donMsg'); if(!needAccount(m)) return;
   const amt = Number(String($('#dAmt').value).replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[^\d.]/g, ''));
-  if(!(amt >= 1) || amt > 1000000) return showMsg(m, 'أدخلي مبلغًا صحيحًا بالريال.', false);
+  if(!(amt >= 1) || amt > 1000000) return showMsg(m, 'أدخل مبلغًا صحيحًا بالريال.', false);
   const id = nid('d'), method = $('#dMethod').value, pur = $('#dPurpose').value;
   const drec = {id, purpose:pur, purposeName:CAT0.donations.find(d => d[0] === pur)[1], amount:Math.round(amt * 100) / 100, zakat:$('#dZakat').checked, freq:$('#dFreq').value, gift:$('#dGift').value.trim(), method, status: method === 'transfer' ? 'awaiting_transfer' : 'awaiting_payment', at:now(), events:{[nid('e')]:{t:'created', at:now()}}};
   try{ await writeMe({dons:{[id]:drec}, ...auditSelf('إنشاء تبرع ' + ref6(id))}); $('#dAmt').value = ''; m.style.display = 'none'; payModal('don', id, drec); }catch(err){ showMsg(m, 'تعذر تسجيل التبرع.', false); }
@@ -1500,13 +1506,13 @@ $('#volForm').onsubmit = async e => {
 };
 $('#partForm').onsubmit = async e => {
   e.preventDefault(); const m = $('#partMsg'); if(!needAccount(m)) return;
-  if(!$('#pOrg').value.trim() || !$('#pDesc').value.trim()) return showMsg(m, 'أدخلي اسم الجهة ووصف التعاون.', false);
+  if(!$('#pOrg').value.trim() || !$('#pDesc').value.trim()) return showMsg(m, 'أدخل اسم الجهة ووصف التعاون.', false);
   const id = nid('pr');
   try{ await writeMe({vols:{[id]:{id, kind:'partner', org:$('#pOrg').value.trim(), field:$('#pField').value, desc:$('#pDesc').value.trim(), at:now(), status:'pending'}}, ...auditSelf('طلب شراكة')}); showMsg(m, `حُفظ طلب الشراكة برقم ${ref6(id)}، ويتابعه مسؤول الشراكات.`, true); e.target.reset(); }catch(err){ showMsg(m, 'تعذر الحفظ.', false); }
 };
 $('#cForm').onsubmit = async e => {
   e.preventDefault(); const m = $('#cMsg'); if(!needAccount(m)) return;
-  if(!$('#cText').value.trim()) return showMsg(m, 'اكتبي نص الرسالة.', false);
+  if(!$('#cText').value.trim()) return showMsg(m, 'اكتب نص الرسالة.', false);
   const id = nid('m'), t = $('#cType').value;
   try{ await writeMe({msgs:{[id]:{id, type:t, prog:$('#cProg').value, text:$('#cText').value.trim(), at:now(), status:'open'}}, ...auditSelf('رسالة: ' + t)}); showMsg(m, t === 'شكوى' ? `استُلمت الشكوى برقم ${ref6(id)}. يصلك إشعار الاستلام خلال يومي عمل، والرد خلال عشرة أيام عمل.` : `استُلمت رسالتك برقم ${ref6(id)}، ويصلك الرد في «مساحتي».`, true); e.target.reset(); }catch(err){ showMsg(m, 'تعذر الإرسال.', false); }
 };
@@ -1526,7 +1532,7 @@ function reqCard(r){
   const last = isReg ? 'الالتحاق' : (r._t === 'part' ? 'المتابعة' : 'الإسناد');
   const st = r.status;
   const steps = [['أُرسل','done'], [st === 'info' ? 'استكمال' : 'المراجعة', st === 'pending' ? 'cur' : (st === 'info' ? 'need' : 'done')], [st === 'rejected' ? 'اعتذار' : st === 'waitlist' ? 'انتظار' : 'القرار', ['accepted','rejected'].includes(st) ? 'done' : (st === 'waitlist' ? 'cur' : '')], [last, st === 'accepted' ? 'done' : '']];
-  const next = {pending:`<b>الخطوة التالية:</b> يراجع الفريق طلبك ويصلك القرار هنا خلال 3 أيام عمل.`, info:`<b>المطلوب منكِ:</b> ${esc(r.adminNote || 'استكمال بيانات الطلب')}`, waitlist:`<b>قائمة الانتظار:</b> ننبهك فور توفر مقعد. ${esc(r.adminNote || '')}`, accepted: isReg ? `<b>مكتمل:</b> الدورة في «تعلّمي» وجاهزة للبدء.` : `<b>قُبل طلبك:</b> ${esc(r.adminNote || 'يتواصل معك الفريق لترتيب الإسناد.')}`, rejected:`<b>القرار:</b> ${esc(r.adminNote || 'نعتذر عن قبول الطلب في هذه الدفعة.')}`}[st] || '';
+  const next = {pending:`<b>الخطوة التالية:</b> يراجع الفريق طلبك ويصلك القرار هنا خلال 3 أيام عمل.`, info:`<b>المطلوب منك:</b> ${esc(r.adminNote || 'استكمال بيانات الطلب')}`, waitlist:`<b>قائمة الانتظار:</b> ننبهك فور توفر مقعد. ${esc(r.adminNote || '')}`, accepted: isReg ? `<b>مكتمل:</b> الدورة في «تعلّمي» وجاهزة للبدء.` : `<b>قُبل طلبك:</b> ${esc(r.adminNote || 'يتواصل معك الفريق لترتيب الإسناد.')}`, rejected:`<b>القرار:</b> ${esc(r.adminNote || 'نعتذر عن قبول الطلب في هذه الدفعة.')}`}[st] || '';
   let cta = '';
   if(st === 'info') cta = `<button class="btn a sm" data-fix="${r.id}">استكمال الطلب</button>`;
   else if(st === 'accepted' && isReg) cta = `<button class="btn s sm" data-golearn="${r.course}" data-who="${esc(r.who)}">فتح الدورة</button>`;
@@ -1547,18 +1553,18 @@ function renderMe(){
   const kids = Object.values(me.kids || {});
   const todos = [...act.map(r => `<div class="todo"><span class="ic"><svg><use href="#i-alert"/></svg></span><div style="flex:1;min-width:0"><b style="font-family:var(--f-head);font-size:.92rem">استكمال طلب «${esc(course(r.course)?.name || r.task || r.org)}»</b><p class="small">${esc(r.adminNote || '')}</p></div><button class="btn a sm" data-mv="m4">استكمال</button></div>`), ...unpaid.map(o => `<div class="todo"><span class="ic"><svg><use href="#i-cart"/></svg></span><div style="flex:1;min-width:0"><b style="font-family:var(--f-head);font-size:.92rem">إتمام دفع الطلب ${ref6(o.id)}</b><p class="small">${sar(o.total)}</p></div><button class="btn a sm" data-repay="${o.id}" data-kind="order">ادفع</button></div>`)];
   $('#mv-m1').innerHTML = head(`مرحبًا ${esc(me.name)}`, 'كل ما يخصك ويخص أطفالك في الجمعية') + `<div class="next">
-    ${cont ? `<div class="card edge"><span class="chip g" style="align-self:flex-start">تابعي من حيث توقفتِ</span><h2>${esc(cont.p.c.name)}</h2><p class="small">${cont.x[1].who !== 'self' ? 'المستفيد: ' + esc(cont.x[1].whoName) + ' | ' : ''}${cont.p.n} من ${cont.p.ls.length} دروس</p><div class="bar"><i style="width:${cont.p.pct}%"></i></div><div><button class="btn s" data-golearn="${cont.p.c.id}" data-who="${esc(cont.x[1].who)}">متابعة ←</button></div></div>` : `<div class="card edge"><h2>ابدئي رحلة التعلم</h2><p class="small">تصفحي دورات الأكاديمية وسجّلي فيها لكِ ولأطفالك.</p><div><button class="btn s" data-pv="academy">الأكاديمية</button></div></div>`}
-    <div class="card"><h3>ينتظر منكِ</h3>${todos.length ? todos.join('') : '<p class="small">لا شيء ينتظرك الآن.</p>'}</div></div>
+    ${cont ? `<div class="card edge"><span class="chip g" style="align-self:flex-start">تابع من حيث توقفت</span><h2>${esc(cont.p.c.name)}</h2><p class="small">${cont.x[1].who !== 'self' ? 'المستفيد: ' + esc(cont.x[1].whoName) + ' | ' : ''}${cont.p.n} من ${cont.p.ls.length} دروس</p><div class="bar"><i style="width:${cont.p.pct}%"></i></div><div><button class="btn s" data-golearn="${cont.p.c.id}" data-who="${esc(cont.x[1].who)}">متابعة ←</button></div></div>` : `<div class="card edge"><h2>ابدأ رحلة التعلم</h2><p class="small">تصفح دورات الأكاديمية وسجّلي فيها لك ولأطفالك.</p><div><button class="btn s" data-pv="academy">الأكاديمية</button></div></div>`}
+    <div class="card"><h3>ينتظر منك</h3>${todos.length ? todos.join('') : '<p class="small">لا شيء ينتظرك الآن.</p>'}</div></div>
     <h2 style="margin-top:28px;font-size:1.3rem">أطفالي</h2>
-    <div class="grid g2" style="margin-top:12px">${kids.length ? kids.map(k => { const ke = ens.filter(([kk, e]) => e.who === k.id); const p0 = ke[0] ? prog(ke[0]) : null; return `<div class="card"><div class="kid"><span class="av">${esc(k.name[0])}</span><div style="flex:1;min-width:0"><b>${esc(k.name)}</b> <span class="small">| ${esc(k.age)}</span>${p0 ? `<div class="bar" style="margin-top:6px"><i style="width:${p0.pct}%"></i></div><span class="small">${esc(p0.c.name)}: ${p0.n} من ${p0.ls.length}</span>` : '<p class="small">لم يلتحق ببرنامج بعد</p>'}</div></div></div>`; }).join('') : empty('أضيفي أطفالك لتسجيلهم في برامج المفيد.', '<button class="btn s sm" data-mv="m3">إضافة طفل</button>')}</div>`;
-  $('#mv-m2').innerHTML = head('تعلّمي', 'الدورات التي التحقتِ بها أنتِ وأطفالك، وتقدم كل منها.', '<button class="btn o sm" data-pv="academy">تصفح الدورات</button>') + (ens.length ? `<div class="grid g3">${ens.map(x => { const p = prog(x), e = x[1]; return `<div class="card hov"><span class="small">${AC[p.c.ac]}${e.who !== 'self' ? ' | ' + esc(e.whoName) : ''}</span><h3>${esc(p.c.name)}</h3><div class="bar"><i style="width:${p.pct}%"></i></div><span class="small">${p.n} من ${p.ls.length} | الاختبار: ${e.quiz?.best >= 2 ? 'مجتاز' : e.quiz?.attempts ? 'لم يُجتز بعد' : 'لم يُؤدَّ'}</span><div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn s sm" data-golearn="${p.c.id}" data-who="${esc(e.who)}">${p.n ? 'متابعة' : 'ابدأ'}</button>${p.ok ? `<button class="btn o sm" data-cert="${x[0]}">شهادة الإتمام</button>` : ''}</div></div>`; }).join('')}</div>` : empty('تظهر الدورة هنا بعد قبول طلب التسجيل أو إتمام الشراء.', '<button class="btn s sm" data-pv="academy">الأكاديمية</button>'));
+    <div class="grid g2" style="margin-top:12px">${kids.length ? kids.map(k => { const ke = ens.filter(([kk, e]) => e.who === k.id); const p0 = ke[0] ? prog(ke[0]) : null; return `<div class="card"><div class="kid"><span class="av">${esc(k.name[0])}</span><div style="flex:1;min-width:0"><b>${esc(k.name)}</b> <span class="small">| ${esc(k.age)}</span>${p0 ? `<div class="bar" style="margin-top:6px"><i style="width:${p0.pct}%"></i></div><span class="small">${esc(p0.c.name)}: ${p0.n} من ${p0.ls.length}</span>` : '<p class="small">لم يلتحق ببرنامج بعد</p>'}</div></div></div>`; }).join('') : empty('أضف أطفالك لتسجيلهم في برامج المفيد.', '<button class="btn s sm" data-mv="m3">إضافة طفل</button>')}</div>`;
+  $('#mv-m2').innerHTML = head('تعلّمي', 'الدورات التي التحقت بها أنت وأطفالك، وتقدم كل منها.', '<button class="btn o sm" data-pv="academy">تصفح الدورات</button>') + (ens.length ? `<div class="grid g3">${ens.map(x => { const p = prog(x), e = x[1]; return `<div class="card hov"><span class="small">${AC[p.c.ac]}${e.who !== 'self' ? ' | ' + esc(e.whoName) : ''}</span><h3>${esc(p.c.name)}</h3><div class="bar"><i style="width:${p.pct}%"></i></div><span class="small">${p.n} من ${p.ls.length} | الاختبار: ${e.quiz?.best >= 2 ? 'مجتاز' : e.quiz?.attempts ? 'لم يُجتز بعد' : 'لم يُؤدَّ'}</span><div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn s sm" data-golearn="${p.c.id}" data-who="${esc(e.who)}">${p.n ? 'متابعة' : 'ابدأ'}</button>${p.ok ? `<button class="btn o sm" data-cert="${x[0]}">شهادة الإتمام</button>` : ''}</div></div>`; }).join('')}</div>` : empty('تظهر الدورة هنا بعد قبول طلب التسجيل أو إتمام الشراء.', '<button class="btn s sm" data-pv="academy">الأكاديمية</button>'));
   if(!document.activeElement?.closest('#mv-m3')) $('#mv-m3').innerHTML = head('أسرتي', 'يُضاف الطفل باسمه وفئته العمرية فقط، دون حساب أو بريد أو رقم هوية.') + `<div class="grid g2"><div class="card"><h3>الأطفال</h3>${kids.length ? kids.map(k => `<div class="kid" style="padding:8px 0;border-bottom:1px dashed var(--line)"><span class="av">${esc(k.name[0])}</span><b style="flex:1">${esc(k.name)}</b><span class="small">${esc(k.age)}</span></div>`).join('') : '<p class="small">لم يُضف أطفال بعد.</p>'}
-    <form id="kidForm" class="fgrid" novalidate><div class="fld"><label for="kName">اسم الطفل</label><input type="text" id="kName"></div><div class="fld"><label for="kAge">الفئة العمرية</label><select id="kAge"><option>4 ← 6 سنوات</option><option>7 ← 9 سنوات</option><option>10 ← 12 سنة</option></select></div><div class="full"><button class="btn s sm" type="submit">إضافة طفل</button></div><div class="msg full" id="kidMsg"></div></form></div>
-    <div class="card"><h3>بياناتي</h3><form id="profForm" class="fgrid" novalidate><div class="fld full"><label for="uName">الاسم</label><input type="text" id="uName" value="${esc(me.name)}"></div><div class="fld"><label for="uTel">الجوال</label><input type="tel" id="uTel" value="${esc(me.phone || '')}"></div><div class="fld"><label for="uMail">البريد</label><input type="email" id="uMail" dir="ltr" value="${esc(me.email || '')}"></div><div class="full" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn p sm" type="submit">حفظ</button><button class="btn o sm" type="button" data-signout>تسجيل الخروج</button></div><div class="msg full" id="profMsg"></div></form><p class="small">يحق لكِ طلب الاطلاع على بياناتك وتصحيحها وإتلافها عبر «تواصل معنا».</p></div></div>`;
+    <form id="kidForm" class="fgrid" novalidate><div class="fld"><label for="kName">اسم الطفل</label><input type="text" id="kName"></div><div class="fld"><label for="kAge">الفئة العمرية</label><select id="kAge"><option>4-6 سنوات</option><option>7-9 سنوات</option><option>10-12 سنة</option></select></div><div class="full"><button class="btn s sm" type="submit">إضافة طفل</button></div><div class="msg full" id="kidMsg"></div></form></div>
+    <div class="card"><h3>بياناتي</h3><form id="profForm" class="fgrid" novalidate><div class="fld full"><label for="uName">الاسم</label><input type="text" id="uName" value="${esc(me.name)}"></div><div class="fld"><label for="uTel">الجوال</label><input type="tel" id="uTel" value="${esc(me.phone || '')}"></div><div class="fld"><label for="uMail">البريد</label><input type="email" id="uMail" dir="ltr" value="${esc(me.email || '')}"></div><div class="full" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn p sm" type="submit">حفظ</button><button class="btn o sm" type="button" data-signout>تسجيل الخروج</button></div><div class="msg full" id="profMsg"></div></form><p class="small">يحق لك طلب الاطلاع على بياناتك وتصحيحها وإتلافها عبر «تواصل معنا».</p></div></div>`;
   const cnt = k => reqs.filter(r => k === 'all' || reqGroup(r) === k).length;
-  $('#mv-m4').innerHTML = head('طلباتي', 'كل ما قدمتِه للجمعية في مكان واحد: التسجيل في البرامج لكِ ولأطفالك، والتطوع، والشراكة. يعرض كل طلب مرحلته الآن، وما يحدث بعدها، وما إذا كان ينتظر منكِ شيئًا.') +
+  $('#mv-m4').innerHTML = head('طلباتي', 'كل ما قدمتِه للجمعية في مكان واحد: التسجيل في البرامج لك ولأطفالك، والتطوع، والشراكة. يعرض كل طلب مرحلته الآن، وما يحدث بعدها، وما إذا كان ينتظر منك شيئًا.') +
     `<div class="how"><div><b>١. الإرسال</b>من صفحة الدورة أو الفرصة</div><div><b>٢. المراجعة</b>خلال 3 أيام عمل</div><div><b>٣. القرار</b>قبول، أو استكمال، أو انتظار</div><div><b>٤. الالتحاق</b>تظهر الدورة في «تعلّمي»</div></div>` +
-    (reqs.length ? `<div class="filters" style="margin-bottom:14px" id="reqf">${[['all','الكل'],['act','ينتظر منكِ'],['prog','قيد المراجعة'],['done','مكتملة']].map(([k, l]) => `<button aria-pressed="${RQF === k}" data-f="${k}">${l} <span>${cnt(k)}</span></button>`).join('')}</div><div style="display:flex;flex-direction:column;gap:12px">${reqs.filter(r => RQF === 'all' || reqGroup(r) === RQF).map(reqCard).join('') || empty('لا توجد طلبات في هذا التصنيف.')}</div>` : empty('لم تقدمي أي طلب بعد. سجّلي في دورة من الأكاديمية، أو تطوعي بمهمة قصيرة.', '<div style="display:flex;gap:8px"><button class="btn p sm" data-pv="academy">الأكاديمية</button><button class="btn o sm" data-pv="give" data-tab="d2">التطوع</button></div>'));
+    (reqs.length ? `<div class="filters" style="margin-bottom:14px" id="reqf">${[['all','الكل'],['act','ينتظر منك'],['prog','قيد المراجعة'],['done','مكتملة']].map(([k, l]) => `<button aria-pressed="${RQF === k}" data-f="${k}">${l} <span>${cnt(k)}</span></button>`).join('')}</div><div style="display:flex;flex-direction:column;gap:12px">${reqs.filter(r => RQF === 'all' || reqGroup(r) === RQF).map(reqCard).join('') || empty('لا توجد طلبات في هذا التصنيف.')}</div>` : empty('لم تقدمي أي طلب بعد. سجّل في دورة من الأكاديمية، أو تطوّع بمهمة قصيرة.', '<div style="display:flex;gap:8px"><button class="btn p sm" data-pv="academy">الأكاديمية</button><button class="btn o sm" data-pv="give" data-tab="d2">التطوع</button></div>'));
   const lib = Object.entries(me.ents || {}).filter(([p, e]) => !e.revoked && product(p)?.type === 'digital');
   const ords = Object.values(me.orders || {}).sort((a, b) => b.at.localeCompare(a.at));
   $('#mv-m5').innerHTML = head('مكتبتي ومشترياتي', 'كتبك الرقمية، وطلبات المتجر وحالة دفعها وشحنها.', '<button class="btn o sm" data-pv="store">المتجر</button>') +
@@ -1576,9 +1582,9 @@ document.addEventListener('click', async e => {
   if(wd){ if(!await confirm2('سحب الطلب نهائيًا؟')) return; const k = wd.dataset.t === 'reg' ? 'regs' : 'vols'; try{ await writeMe({[k]:{[wd.dataset.withdraw]:{status:'rejected', adminNote:'سُحب الطلب بطلبك', withdrawnAt:now()}}}); }catch(err){} }
 });
 document.addEventListener('submit', async e => {
-  if(e.target.id === 'fixForm'){ e.preventDefault(); const t = $('#fixT').value.trim(), m = $('#fixMsg'); if(!t) return showMsg(m, 'اكتبي الرد.', false); const id = e.target.dataset.r; try{ await writeMe({regs:{[id]:{status:'pending', reply:t, hist:{[nid('h')]:{s:'pending', at:now(), by:S.uid, note:t}}}}}); closeModal(); }catch(err){ showMsg(m, 'تعذر الحفظ.', false); } }
-  if(e.target.id === 'kidForm'){ e.preventDefault(); const m = $('#kidMsg'), name = $('#kName').value.trim(); if(!name) return showMsg(m, 'أدخلي اسم الطفل.', false); const kid = nid('k'); try{ await writeMe({kids:{[kid]:{id:kid, name, age:$('#kAge').value, at:now()}}}); document.activeElement?.blur(); renderMe(); }catch(err){ return showMsg(m, 'تعذر الحفظ.', false); } }
-  if(e.target.id === 'profForm'){ e.preventDefault(); const m = $('#profMsg'), name = $('#uName').value.trim(); if(!name) return showMsg(m, 'أدخلي الاسم.', false); try{ await writeMe({name, phone:$('#uTel').value.trim(), email:$('#uMail').value.trim()}); showMsg(m, 'حُفظت البيانات.', true); }catch(err){ showMsg(m, 'تعذر الحفظ.', false); } }
+  if(e.target.id === 'fixForm'){ e.preventDefault(); const t = $('#fixT').value.trim(), m = $('#fixMsg'); if(!t) return showMsg(m, 'اكتب الرد.', false); const id = e.target.dataset.r; try{ await writeMe({regs:{[id]:{status:'pending', reply:t, hist:{[nid('h')]:{s:'pending', at:now(), by:S.uid, note:t}}}}}); closeModal(); }catch(err){ showMsg(m, 'تعذر الحفظ.', false); } }
+  if(e.target.id === 'kidForm'){ e.preventDefault(); const m = $('#kidMsg'), name = $('#kName').value.trim(); if(!name) return showMsg(m, 'أدخل اسم الطفل.', false); const kid = nid('k'); try{ await writeMe({kids:{[kid]:{id:kid, name, age:$('#kAge').value, at:now()}}}); document.activeElement?.blur(); renderMe(); }catch(err){ return showMsg(m, 'تعذر الحفظ.', false); } }
+  if(e.target.id === 'profForm'){ e.preventDefault(); const m = $('#profMsg'), name = $('#uName').value.trim(); if(!name) return showMsg(m, 'أدخل الاسم.', false); try{ await writeMe({name, phone:$('#uTel').value.trim(), email:$('#uMail').value.trim()}); showMsg(m, 'حُفظت البيانات.', true); }catch(err){ showMsg(m, 'تعذر الحفظ.', false); } }
 });
 
 /* ===== مشغل الدورة ===== */
@@ -1591,7 +1597,7 @@ function openLearn(cid, who){
 function renderLearn(){
   if(!LEARN) return;
   const c = course(LEARN.cid), en = S.me?.enroll?.[enrollKey(LEARN.cid, LEARN.who)];
-  if(!c || !en || en.revoked){ $('#mv-learn').innerHTML = empty('لا تملكين صلاحية الوصول إلى هذه الدورة.'); return; }
+  if(!c || !en || en.revoked){ $('#mv-learn').innerHTML = empty('لا تملك صلاحية الوصول إلى هذه الدورة.'); return; }
   const ls = lessonsOf(c), done = en.done || {}, nDone = ls.filter(l => done[l[0]]).length, pct = ls.length ? Math.round(nDone / ls.length * 100) : 0;
   const lid = LEARN.lid || (ls.find(l => !done[l[0]]) || ls[0])[0]; LEARN.lid = lid;
   const lesson = ls.find(l => l[0] === lid), mod = c.mods.find(m => m.ls.some(l => l[0] === lid)), media = mediaOf(c.id, lid);
@@ -1605,13 +1611,13 @@ function renderLearn(){
     <div class="card">${lid === 'quiz' ? quizHtml(c, en) : `<span class="small">${esc(mod?.t || '')}</span><h2>${esc(lesson[1])}</h2>
       ${media ? (/\.(mp4|webm)(\?|$)/i.test(media) ? `<video controls style="width:100%;border-radius:12px" src="${esc(media)}"></video>` : `<p><a class="btn o" href="${esc(media)}" target="_blank" rel="noopener">فتح التسجيل ←</a></p>`) : '<div class="vidph">التسجيل المرئي لهذا الدرس بانتظار الرفع من مساحة العمل</div>'}
       <p>يتناول الدرس «${esc(lesson[1])}» ضمن ${esc(c.name)}. يُستبدل هذا النص بملخص الدرس المعتمد ومواده المساعدة عند رفعها.</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">${done[lid] ? '<span class="chip g">أكملتِ هذا الدرس</span>' : `<button class="btn s" data-done="${lid}">تعليم الدرس مكتملًا</button>`}${i < ls.length - 1 ? `<button class="btn o" data-lesson="${ls[i + 1][0]}">الدرس التالي ←</button>` : (c.quiz.length ? '<button class="btn o" data-lesson="quiz">الاختبار الختامي ←</button>' : '')}</div>`}</div></div>`;
+      <div style="display:flex;gap:8px;flex-wrap:wrap">${done[lid] ? '<span class="chip g">أكملت هذا الدرس</span>' : `<button class="btn s" data-done="${lid}">تعليم الدرس مكتملًا</button>`}${i < ls.length - 1 ? `<button class="btn o" data-lesson="${ls[i + 1][0]}">الدرس التالي ←</button>` : (c.quiz.length ? '<button class="btn o" data-lesson="quiz">الاختبار الختامي ←</button>' : '')}</div>`}</div></div>`;
 }
 function quizHtml(c, en){
   const q = en.quiz || {}, tries = q.attempts || 0, max = 3;
   const h = `<h2>الاختبار الختامي</h2><p class="small">${c.quiz.length} أسئلة | النجاح بإجابتين صحيحتين | المحاولات ${tries} من ${max}${q.best !== undefined ? ` | أفضل نتيجة ${q.best} من ${c.quiz.length}` : ''}</p>`;
-  if(q.best >= 2) return h + `<div class="note" style="margin-top:10px">اجتزتِ الاختبار بنتيجة ${q.best} من ${c.quiz.length}.</div>`;
-  if(tries >= max) return h + '<div class="alert" style="margin-top:10px">استنفدتِ المحاولات. تواصلي مع فريق البرامج لإعادة فتح الاختبار.</div>';
+  if(q.best >= 2) return h + `<div class="note" style="margin-top:10px">اجتزت الاختبار بنتيجة ${q.best} من ${c.quiz.length}.</div>`;
+  if(tries >= max) return h + '<div class="alert" style="margin-top:10px">استنفدت المحاولات. تواصلي مع فريق البرامج لإعادة فتح الاختبار.</div>';
   return h + `<form id="quizForm">${c.quiz.map((x, i) => `<fieldset class="qf"><legend>${i + 1}. ${esc(x[0])}</legend>${x[1].map((o, j) => `<label class="chkl"><input type="radio" name="q${i}" value="${j}"><span>${esc(o)}</span></label>`).join('')}</fieldset>`).join('')}<div style="margin-top:12px"><button class="btn p" type="submit">تسليم الإجابات</button></div><div class="msg" id="quizMsg"></div></form>`;
 }
 document.addEventListener('click', async e => {
@@ -1623,7 +1629,7 @@ document.addEventListener('submit', async e => {
   if(e.target.id !== 'quizForm' || !LEARN) return; e.preventDefault();
   const c = course(LEARN.cid), k = enrollKey(LEARN.cid, LEARN.who), q = S.me.enroll[k].quiz || {};
   const ans = c.quiz.map((x, i) => { const r = e.target.querySelector(`input[name=q${i}]:checked`); return r ? +r.value : -1; });
-  if(ans.includes(-1)) return showMsg($('#quizMsg'), 'أجيبي عن جميع الأسئلة.', false);
+  if(ans.includes(-1)) return showMsg($('#quizMsg'), 'أجب عن جميع الأسئلة.', false);
   const score = ans.filter((a, i) => a === c.quiz[i][2]).length;
   try{ await writeMe({enroll:{[k]:{quiz:{attempts:(q.attempts || 0) + 1, best:Math.max(score, q.best ?? -1), at:now(), tries:{[nid('qa')]:{score, ans, at:now()}}}}}}); if(score < 2) setTimeout(() => showMsg($('#quizMsg'), `نتيجتك ${score} من ${c.quiz.length}. يمكنك المحاولة مرة أخرى.`, false), 60); }
   catch(err){ showMsg($('#quizMsg'), 'تعذر حفظ النتيجة.', false); }
@@ -1667,11 +1673,11 @@ function renderWS(){
   const completed = ens.filter(e => { const c = course(e.course); return lessonsOf(c).every(l => e.done?.[l[0]]) && e.quiz?.best >= 2; }).length;
   const kids = S.all.reduce((s, f) => s + Object.keys(f.kids || {}).length, 0);
   const K = (t, v, s) => `<div class="kpi"><span>${t}</span><b>${v}</b>${s ? `<span>${s}</span>` : ''}</div>`;
-  $('#w-kpi').innerHTML = wh('المؤشرات', 'محسوبة من سجلات المنصة الفعلية، وتتحدث فور كل عملية') + `<div class="kpis">${K('الحسابات', S.all.length, `أطفال مضافون: ${kids}`)}${K('بانتظار القبول', regs.filter(x => x.status === 'pending').length, `مقبولة: ${regs.filter(x => x.status === 'accepted').length} من ${regs.length}`)}${K('الالتحاقات النشطة', ens.length, `أتموا الدورة: ${completed}`)}${K('معدل الإكمال', ens.length ? Math.round(completed / ens.length * 100) + '%' : '0%', '')}${K('طلبات مدفوعة', paid.length, 'إيراد تجريبي: ' + sar(paid.reduce((s, o) => s + halalas(o.total), 0) / 100))}${K('بانتظار الدفع أو التحويل', orders.filter(o => o.status.startsWith('awaiting')).length, '')}${K('تبرعات مستلمة', recDon.length, sar(recDon.reduce((s, d) => s + halalas(d.amount), 0) / 100))}${K('مطابقة ماليًا', dons.filter(d => d.status === 'reconciled').length, 'سجل التبرعات منفصل عن المتجر')}</div>`;
+  $('#w-kpi').innerHTML = wh('المؤشرات', 'محسوبة من سجلات المنصة الفعلية، وتتحدث فور كل عملية') + `<div class="kpis">${K('الحسابات', S.all.length, `أطفال مضافون: ${kids}`)}${K('بانتظار القبول', regs.filter(x => x.status === 'pending').length, `مقبولة: ${regs.filter(x => x.status === 'accepted').length} من ${regs.length}`)}${K('الالتحاقات النشطة', ens.length, `أتموا الدورة: ${completed}`)}${K('معدل الإكمال', ens.length ? Math.round(completed / ens.length * 100) + '%' : '0%', '')}${K('طلبات مدفوعة', paid.length, 'الإيراد: ' + sar(paid.reduce((s, o) => s + halalas(o.total), 0) / 100))}${K('بانتظار الدفع أو التحويل', orders.filter(o => o.status.startsWith('awaiting')).length, '')}${K('تبرعات مستلمة', recDon.length, sar(recDon.reduce((s, d) => s + halalas(d.amount), 0) / 100))}${K('مطابقة ماليًا', dons.filter(d => d.status === 'reconciled').length, 'سجل التبرعات منفصل عن المتجر')}</div>`;
   // التسجيل والقبول
   $('#w-adm').innerHTML = wh('التسجيل والقبول', 'الأقدم أولًا. القبول ينشئ الالتحاق في الدورة تلقائيًا.', '<button class="btn o sm" id="exportBtn">تصدير CSV</button>') + (regs.length ? `<div class="scroll"><table class="tbl"><thead><tr><th>الطلب</th><th>المستفيد</th><th>الحساب</th><th>الدورة</th><th>الحالة</th><th>القرار</th></tr></thead><tbody>${regs.map(x => `<tr><td>${ref6(x.id)}<br><span class="small">${fmtD(x.at)}</span></td><td>${esc(x.whoName)}${x.consent ? '<br><span class="small">إقرار ولي الأمر ✓</span>' : ''}</td><td>${esc(x._who)}<br><span class="small" dir="ltr">${esc(x._phone)}</span></td><td>${esc(course(x.course)?.name)}${x.note ? `<br><span class="small">${esc(x.note)}</span>` : ''}${x.reply ? `<br><span class="small">رد المستفيد: ${esc(x.reply)}</span>` : ''}</td><td>${chip(RS, x.status)}</td><td class="acts">${['accepted','rejected'].includes(x.status) ? `<span class="small">${esc(x.adminNote || '')}</span>` : `<button class="btn s sm" data-rdec="accepted" data-u="${x._uid}" data-r="${x.id}">قبول</button><button class="btn o sm" data-rdec="info" data-u="${x._uid}" data-r="${x.id}">استكمال</button><button class="btn o sm" data-rdec="waitlist" data-u="${x._uid}" data-r="${x.id}">انتظار</button><button class="btn o sm" data-rdec="rejected" data-u="${x._uid}" data-r="${x.id}">اعتذار</button>`}</td></tr>`).join('')}</tbody></table></div>` : empty('لا توجد طلبات تسجيل بعد.'));
   // البرامج والدورات
-  if(!document.activeElement?.closest('#w-prog')) $('#w-prog').innerHTML = wh('البرامج والدورات', 'المسار ← البرنامج ← الدفعة ← الجلسة ← النشاط ← التقييم. فتح التسجيل وإغلاقه يظهر في الموقع فورًا.') + `<div class="scroll"><table class="tbl"><thead><tr><th>الدورة</th><th>المسار</th><th>النوع</th><th>الملتحقون</th><th>الطلبات المعلقة</th><th>التسجيل</th></tr></thead><tbody>${courses().filter(c => !c.soon).map(c => `<tr><td>${esc(c.name)}</td><td>${AC[c.ac]}</td><td>${c.fee ? 'مدفوعة' : 'مجانية'}${c.kids ? ' | للأطفال' : ''}</td><td>${ens.filter(e => e.course === c.id).length}</td><td>${regs.filter(x => x.course === c.id && x.status === 'pending').length}</td><td><label class="chkl"><input type="checkbox" data-copen="${c.id}" ${c.open ? 'checked' : ''}><span>مفتوح</span></label></td></tr>`).join('')}</tbody></table></div><p class="small" style="margin-top:10px">محفظة البرامج الكاملة (17 برنامجًا) معروضة في الموقع العام، وتُدار بياناتها في إصدار الإنتاج من هنا.</p>`;
+  if(!document.activeElement?.closest('#w-prog')) $('#w-prog').innerHTML = wh('البرامج والدورات', 'المسار ← البرنامج ← الدفعة ← الجلسة ← النشاط ← التقييم. فتح التسجيل وإغلاقه يظهر في الموقع فورًا.') + `<div class="scroll"><table class="tbl"><thead><tr><th>الدورة</th><th>المسار</th><th>النوع</th><th>الملتحقون</th><th>الطلبات المعلقة</th><th>التسجيل</th></tr></thead><tbody>${courses().filter(c => !c.soon).map(c => `<tr><td>${esc(c.name)}</td><td>${AC[c.ac]}</td><td>${c.fee ? 'مدفوعة' : 'مجانية'}${c.kids ? ' | للأطفال' : ''}</td><td>${ens.filter(e => e.course === c.id).length}</td><td>${regs.filter(x => x.course === c.id && x.status === 'pending').length}</td><td><label class="chkl"><input type="checkbox" data-copen="${c.id}" ${c.open ? 'checked' : ''}><span>مفتوح</span></label></td></tr>`).join('')}</tbody></table></div><p class="small" style="margin-top:10px">محفظة البرامج الكاملة (17 برنامجًا) معروضة في الموقع العام.</p>`;
   // الأكاديمية
   if(!document.activeElement?.closest('#w-acad')) $('#w-acad').innerHTML = wh('الأكاديمية والدروس', 'تقدم المتعلمين، ورفع روابط تسجيلات الدروس.') + `<div class="grid g2" style="align-items:start"><div class="card"><h3>رفع تسجيل درس</h3><p class="small">رابط آمن من خدمة البث المعتمدة. يظهر للملتحقين وحدهم.</p><div class="fgrid"><div class="fld"><label for="mCourse">الدورة</label><select id="mCourse">${courses().filter(c => !c.soon).map(c => `<option value="${c.id}">${esc(c.name)}</option>`).join('')}</select></div><div class="fld"><label for="mLesson">الدرس</label><select id="mLesson"></select></div><div class="fld full"><label for="mUrl">رابط التسجيل</label><input type="text" id="mUrl" dir="ltr" placeholder="https://"></div><div class="full"><button class="btn p sm" id="mSave">حفظ الرابط</button></div><div class="msg full" id="mMsg"></div></div></div>
     <div class="card"><h3>تقدم المتعلمين</h3>${ens.length ? `<div class="scroll"><table class="tbl"><thead><tr><th>المتعلم</th><th>الدورة</th><th>التقدم</th><th>الاختبار</th></tr></thead><tbody>${ens.map(e => { const c = course(e.course), ls = lessonsOf(c), n = ls.filter(l => e.done?.[l[0]]).length; return `<tr><td>${esc(e.who !== 'self' ? e.whoName + ' (طفل)' : e._who)}</td><td>${esc(c.name)}</td><td><div class="bar"><i style="width:${ls.length ? n / ls.length * 100 : 0}%"></i></div><span class="small">${n} من ${ls.length}</span></td><td>${e.quiz?.attempts ? `${e.quiz.best} من ${c.quiz.length}` : '<span class="small">لم يُؤدَّ</span>'}</td></tr>`; }).join('')}</tbody></table></div>` : '<p class="small">لا توجد التحاقات بعد.</p>'}</div></div>`;
@@ -1693,7 +1699,7 @@ function renderWS(){
   const nameOf = uid => famName(S.all.find(f => f.uid === uid) || {});
   const aud = S.all.flatMap(f => Object.values(f.audit || {}).map(a => ({...a, _who:famName(f)}))).sort((a, b) => b.at.localeCompare(a.at)).slice(0, 200);
   renderTeam();
-  $('#w-audit').innerHTML = wh('سجل التدقيق', 'كل قرار مسجل بمنفذه ودوره ووقته.') + (aud.length ? `<div class="scroll"><table class="tbl"><thead><tr><th>الوقت</th><th>المنفذ</th><th>الدور</th><th>الحساب المعني</th><th>العملية</th></tr></thead><tbody>${aud.map(a => `<tr><td>${fmtT(a.at)}</td><td>${esc(a.by === S.uid ? 'أنتِ' : nameOf(a.by))}</td><td>${a.role ? ROLES[a.role]?.[0] || '' : 'المستفيد'}</td><td>${esc(a._who)}</td><td>${esc(a.act)}</td></tr>`).join('')}</tbody></table></div>` : empty('لا توجد عمليات مسجلة بعد.'));
+  $('#w-audit').innerHTML = wh('سجل التدقيق', 'كل قرار مسجل بمنفذه ودوره ووقته.') + (aud.length ? `<div class="scroll"><table class="tbl"><thead><tr><th>الوقت</th><th>المنفذ</th><th>الدور</th><th>الحساب المعني</th><th>العملية</th></tr></thead><tbody>${aud.map(a => `<tr><td>${fmtT(a.at)}</td><td>${esc(a.by === S.uid ? 'أنت' : nameOf(a.by))}</td><td>${a.role ? ROLES[a.role]?.[0] || '' : 'المستفيد'}</td><td>${esc(a._who)}</td><td>${esc(a.act)}</td></tr>`).join('')}</tbody></table></div>` : empty('لا توجد عمليات مسجلة بعد.'));
 }
 function fillLessons(){ const c = course($('#mCourse')?.value); if(!c) return; $('#mLesson').innerHTML = lessonsOf(c).map(l => `<option value="${l[0]}">${esc(l[1])}</option>`).join(''); $('#mUrl').value = mediaOf(c.id, $('#mLesson').value); }
 document.addEventListener('change', async e => {
@@ -1827,16 +1833,16 @@ const EN = {
 
 'جمعية قنوان':'Qanwan Association','للتنمية والتعليم':'for Development & Education','الرئيسية':'Home','من نحن':'About Us','البرامج والأكاديمية':'Programs','المتجر':'Store','المستودع الرقمي':'Library','الأثر والحوكمة':'Impact','الأخبار':'News','تواصل معنا':'Contact','تبرع الآن':'Donate Now','تطوع معنا':'Volunteer','دخول':'Sign in','دخول فريق العمل':'Staff sign-in',
 'قنوان دانية.. لنقطف لكم من أطايب الثمر':'Qanwan Daniyah: gathering the finest fruit for you','جمعية قنوان للتنمية والتعليم بالرياض، تقدم برامج تنموية وتعليمية للطفولة والأسرة والتربويات':'Qanwan Association for Development and Education in Riyadh offers developmental and educational programs for children, families and educators','تعرّف على برامجنا':'Explore our programs','ادعم رسالتنا':'Support our mission',
-'للأسرة':'For families','أنا ولي أمر':'I am a parent','برامج قيمية لطفلك تشاركين فيها، بتسجيل مجاني وتقدم تتابعينه.':'Values programs for your child that you join in, with free registration and progress you can follow.','برامج المفيد ←':'Al-Mufid programs →',
+'للأسرة':'For families','أنا ولي أمر':'I am a parent','برامج قيمية لطفلك تشارك فيها، بتسجيل مجاني وتقدم تتابعينه.':'Values programs for your child that you join in, with free registration and progress you can follow.','برامج المفيد ←':'Al-Mufid programs →',
 'لطالبة العلم':'For learners','أريد مجلسًا علميًا':'I want a study circle','مجالس منتظمة في قراءة أمهات الكتب وشرحها بمقدمين مؤهلين.':'Regular circles reading and explaining the classical texts with qualified teachers.','مجالس وريف العنادل ←':'Wareef Al-Anadil circles →',
 'للداعمين والشركاء':'For supporters and partners','أريد أن أسهم':'I want to contribute','كفالة حلقة أو مجلس أو برنامج، أو تطوع، أو شراكة مؤسسية.':'Sponsor an episode, a circle or a program, volunteer, or partner with us.','طرق المساهمة ←':'Ways to contribute →',
 'الأثر والإنجازات':'Impact & Achievements','ما أنجزته قناتا الجمعية وفق صفحة الحصاد في الملف التعريفي':"What the association's two channels achieved, per the harvest page of its profile",'حلقة في قناة المفيد':'Al-Mufid episodes','مشاهدة لحلقات المفيد':'Al-Mufid views','مجلس سماع في وريف العنادل':'Wareef Al-Anadil circles','ساعة من المجالس العلمية':'hours of study circles',
 'المسارات التعليمية':'Learning Tracks','مساران متخصصان لكل فئة برامجها':'Two specialised tracks, each with its own programs','المفيد للأسرة والجيل الجديد':'Al-Mufid for the Family and the New Generation','برامج تعليمية وتنموية للأطفال واليافعين والأمهات':'Educational and developmental programs for children, youth and mothers','سيرة أعظم إنسان صلى الله عليه وسلم':'The Life of the Greatest Man, peace be upon him','مجلس الطفولة العلمي':'The Children\'s Knowledge Circle','حكايا الأنبياء في القرآن':'Stories of the Prophets in the Quran','حياتي قيم':'My Life Is Values','تكوين العادات':'Building Habits','تهذيب السلوك':'Refining Behaviour','استكشف المسار':'Explore the track','وريف العنادل':'Wareef Al-Anadil','برامج علمية شرعية للفتيات والأمهات':'Islamic studies programs for young women and mothers','مجالس السماع الندية لكتب التراث الحديثية':'Listening circles on the classical hadith books','قراءة في التراث: تفسير السعدي وغيره':'Readings in heritage: Tafsir Al-Saadi and more',
 'جمعية قنوان للتنمية والتعليم':'Qanwan Association for Development and Education','الهوية':'Identity','المسيرة':'Our Journey','الترخيص':'Licensing','مجلس الإدارة':'Board of Directors','جمعية أهلية مسجلة لدى المركز الوطني لتنمية القطاع غير الربحي، بإشراف فني من وزارة التعليم. تطل برامجها عبر قناتين: المفيد للأسرة والجيل الجديد، ووريف العنادل.':'A civil association registered with the National Center for Non-Profit Sector Development, under the technical supervision of the Ministry of Education. Its programs reach people through two channels: Al-Mufid and Wareef Al-Anadil.',
 'الرؤية':'Vision','جيلٌ مؤصَّل، ووالديةٌ واعية، وأسرةٌ سعيدة؛ نحو مجتمعٍ ينعمُ بجودةِ الحياة.':'A grounded generation, aware parenting and happy families, toward a society that enjoys quality of life.','الرسالة':'Mission','تقديم برامج تنموية وتعليمية للطفولة والأسرة والتربويات ذات جودة عالية؛ لبناء منظومة مجتمعية تتسم بالسلامة العقدية والحصانة الفكرية واللحمة الوطنية، متميزة في الجوانب القيمية والخُلقية والمهارية.':'Delivering high-quality developmental and educational programs for children, families and educators, to build a community grounded in sound belief, intellectual resilience and national cohesion, distinguished in values, character and skills.','القيم':'Values','الصدق | النزاهة | الشفافية | المواطنة الصالحة | الابتكار | الاستدامة':'Honesty | Integrity | Transparency | Good Citizenship | Innovation | Sustainability',
-'العمل البرامجي قبل الترخيص':'Programs before licensing','نشأت قناتا المفيد ووريف العنادل وتكوّن جمهورهما قبل انطلاق الجمعية بأربع سنوات.':'Al-Mufid and Wareef Al-Anadil grew their audiences four years before the association launched.','التأسيس والترخيص':'Founding and licensing','صدور ترخيص المركز الوطني لتنمية القطاع غير الربحي رقم 1000719000 بتاريخ 15/7/1446هـ.':'Licensed by the National Center for Non-Profit Sector Development, no. 1000719000, dated 15/7/1446 AH.','البناء المؤسسي':'Institutional build','إعداد الخطة الاستراتيجية 2025 ← 2029 والأدلة والسياسات والموازنات.':'Preparing the 2025–2029 strategic plan, manuals, policies and budgets.','المنصة الرقمية':'Digital platform','إطلاق الموقع والأكاديمية والمتجر والمستودع الرقمي بعد اعتماد مجلس الإدارة.':'Launching the website, academy, store and digital library after board approval.',
+'العمل البرامجي قبل الترخيص':'Programs before licensing','نشأت قناتا المفيد ووريف العنادل وتكوّن جمهورهما قبل انطلاق الجمعية بأربع سنوات.':'Al-Mufid and Wareef Al-Anadil grew their audiences four years before the association launched.','التأسيس والترخيص':'Founding and licensing','صدور ترخيص المركز الوطني لتنمية القطاع غير الربحي رقم 1000719000 بتاريخ 15/7/1446هـ.':'Licensed by the National Center for Non-Profit Sector Development, no. 1000719000, dated 15/7/1446 AH.','البناء المؤسسي':'Institutional build','إعداد الخطة الاستراتيجية 2025-2029 والأدلة والسياسات والموازنات.':'Preparing the 2025–2029 strategic plan, manuals, policies and budgets.','المنصة الرقمية':'Digital platform','إطلاق الموقع والأكاديمية والمتجر والمستودع الرقمي بعد اعتماد مجلس الإدارة.':'Launching the website, academy, store and digital library after board approval.',
 'الاسم الرسمي':'Official name','رقم الترخيص':'License number','تاريخ الترخيص':'License date','الرقم الوطني الموحد':'Unified national number','جهة الإشراف':'Supervising body','المركز الوطني لتنمية القطاع غير الربحي':'National Center for Non-Profit Sector Development','الإشراف الفني':'Technical supervision','وزارة التعليم':'Ministry of Education','رئيسة مجلس الإدارة':'Chair of the Board','أ.د. إيمان عبدالله عمر العمودي':'Prof. Eman Abdullah Omar Al-Amoudi','بانتظار الاعتماد':'Pending approval','بقية أعضاء المجلس':'Other board members','تُنشر الأسماء والصفات بعد قرار التشكيل.':'Names and roles are published after the formation decision.',
-'برامجنا الموجهة للطفولة والأسرة والتربويات، وما يُفتح منها للتسجيل':'Our programs for children, families and educators, and those open for registration','قريبًا':'Coming soon','مجانية | للطفل عبر ولي الأمر':'Free | Child via parent','40 حلقة مبسطة بأسلوب قصصي تفاعلي، مع مهام أسرية واختبار قصير.':'40 simple interactive story episodes, with family tasks and a short quiz.','التسجيل مفتوح':'Registration open','سجّل طفلك':'Register your child','غرس القيم لتصبح جزءًا من سلوك الطفل اليومي وقراراته.':"Instilling values into a child's daily behaviour and choices.",'برنامج مرئي':'Video program','تأصيل الأطفال عقديًا وشرعيًا بأسلوب قصصي. 39 حلقة منجزة.':'Grounding children in faith through stories. 39 episodes completed.','متاح للمشاهدة':'Available to watch','شاهد':'Watch','مجانية':'Free','مجالس تفسير السعدي':'Tafsir Al-Saadi circles','مجلس أسبوعي. 157 مجلسًا منجزًا بمدة 170 ساعة.':'Weekly circle. 157 sessions completed, 170 hours.','سجّلي':'Register','قراءة الصحيحين':'Reading the Two Sahihs','مجالس السماع الندية لصحيحي البخاري ومسلم.':'Listening circles on Sahih Al-Bukhari and Sahih Muslim.','مدفوعة':'Paid','الشمائل المحمدية وأوجز السير':'Al-Shamail Al-Muhammadiyyah and a Brief Seerah','دورة مسجلة بأربعة دروس وشهادة إتمام.':'Recorded course with four lessons and a completion certificate.','السعر يُحدد':'Price TBC','في المتجر':'In the store','تحت التطوير':'In development','قصص الأنبياء المذكورة في القرآن الكريم بأسلوب قصصي مشوق.':'Stories of the prophets in the Quran told engagingly.','مقترح':'Proposed','غرس العادات عبر مواقف حياتية بأسلوب الحوار القصصي.':'Building habits through everyday situations and story dialogue.','تقويم السلوكيات بأساليب علمية رحيمة تفهم احتياجات الطفل.':"Correcting behaviour with gentle, evidence-based methods that understand the child's needs.",
+'برامجنا الموجهة للطفولة والأسرة والتربويات، وما يُفتح منها للتسجيل':'Our programs for children, families and educators, and those open for registration','قريبًا':'Coming soon','مجانية | للطفل عبر ولي الأمر':'Free | Child via parent','40 حلقة مبسطة بأسلوب قصصي تفاعلي، مع مهام أسرية واختبار قصير.':'40 simple interactive story episodes, with family tasks and a short quiz.','التسجيل مفتوح':'Registration open','سجّل طفلك':'Register your child','غرس القيم لتصبح جزءًا من سلوك الطفل اليومي وقراراته.':"Instilling values into a child's daily behaviour and choices.",'برنامج مرئي':'Video program','تأصيل الأطفال عقديًا وشرعيًا بأسلوب قصصي. 39 حلقة منجزة.':'Grounding children in faith through stories. 39 episodes completed.','متاح للمشاهدة':'Available to watch','شاهد':'Watch','مجانية':'Free','مجالس تفسير السعدي':'Tafsir Al-Saadi circles','مجلس أسبوعي. 157 مجلسًا منجزًا بمدة 170 ساعة.':'Weekly circle. 157 sessions completed, 170 hours.','سجّل':'Register','قراءة الصحيحين':'Reading the Two Sahihs','مجالس السماع الندية لصحيحي البخاري ومسلم.':'Listening circles on Sahih Al-Bukhari and Sahih Muslim.','مدفوعة':'Paid','الشمائل المحمدية وأوجز السير':'Al-Shamail Al-Muhammadiyyah and a Brief Seerah','دورة مسجلة بأربعة دروس وشهادة إتمام.':'Recorded course with four lessons and a completion certificate.','السعر يُحدد':'Price TBC','في المتجر':'In the store','تحت التطوير':'In development','قصص الأنبياء المذكورة في القرآن الكريم بأسلوب قصصي مشوق.':'Stories of the prophets in the Quran told engagingly.','مقترح':'Proposed','غرس العادات عبر مواقف حياتية بأسلوب الحوار القصصي.':'Building habits through everyday situations and story dialogue.','تقويم السلوكيات بأساليب علمية رحيمة تفهم احتياجات الطفل.':"Correcting behaviour with gentle, evidence-based methods that understand the child's needs.",
 'متجر قنوان':'Qanwan Store','الإصدارات المطبوعة والرقمية والدورات المدفوعة':'Printed and digital publications and paid courses','الكل':'All','الدورات':'Courses','الكتب المطبوعة':'Printed books','الكتب الرقمية':'Digital books','دورة':'Course','تُفتح في «مساحتي» فور تأكيد الدفع.':'Opens in "My Space" once payment is confirmed.','أضف للسلة':'Add to cart','كتاب رقمي':'Digital book','ملخصات مجالس تفسير السعدي':'Tafsir Al-Saadi session summaries','يُضاف إلى «مكتبتي» بعد الدفع.':'Added to "My Library" after payment.','كتاب مطبوع':'Printed book','سلسلة قصص السيرة للأطفال':'Seerah story series for children','شحن داخل المملكة.':'Shipping within the Kingdom.','وسائل الدفع: مدى، البطاقات الائتمانية، Apple Pay، Google Pay، تابي، تمارا، التحويل البنكي.':'Payment: mada, credit cards, Apple Pay, Google Pay, Tabby, Tamara, bank transfer.',
 'محتوى تعليمي متنوع وغني للأسرة والمربيات':'Rich, varied learning content for families and educators','مقالات':'Articles','فيديوهات':'Videos','صوتيات':'Audio','أدلة':'Guides','أوراق عمل':'Worksheets','فيديو':'Video','سلسلة حكايا الأنبياء':'Stories of the Prophets series','قصص الأنبياء عليهم السلام للأطفال.':'Stories of the prophets for children.','صوتي':'Audio','157 مجلسًا في 170 ساعة.':'157 sessions in 170 hours.','مقالة':'Article','تربية الأطفال في العصر الرقمي':'Raising children in the digital age','التعامل مع أثر التقنية على الأطفال.':'Dealing with the effect of technology on children.','دليل':'Guide','دليل الوالدين الشامل':'The complete parents\' guide','نصائح وإرشادات عملية للوالدين.':'Practical advice for parents.',
 'للمانحين والشركاء والجهات الرسمية: ما أنجزناه، وكيف نُدار، وما نفصح عنه':'For donors, partners and officials: what we achieved, how we are governed, what we disclose','قصص النجاح':'Success stories','الحوكمة والشفافية':'Governance & Transparency','«أجد راحة نفسية في هذه المجالس لا أجدها في مكان آخر، فكرة المجالس ممتعة: الاستماع والرفقة الصالحة أمتع من أن أقرأ لوحدي»':'"I find a peace in these circles I find nowhere else. Listening in good company is more enjoyable than reading alone."','مستفيدة من برنامج وريف العنادل':'Wareef Al-Anadil participant','«مجموعة رائعة ومتميزة تتقبل الآراء والاقتراحات بامتنان وتقدير، قمة في التعامل الطيب والرقي»':'"A wonderful, distinguished team that welcomes opinions and suggestions with gratitude, the height of kindness and courtesy."','متطوعة في قنوان':'Qanwan volunteer','«ثراء البرامج ونوعيتها، ووفرة المستفيدين قبل انطلاق الجمعية بأربع سنوات، والسمعة الطيبة وترقّب المستفيدين للمزيد والجديد»':'"Rich, high-quality programs, many beneficiaries four years before the launch, a good reputation, and beneficiaries eager for more."','عضو مجلس الإدارة':'Board member',
