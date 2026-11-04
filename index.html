@@ -472,7 +472,7 @@ fieldset.qf legend{font-family:var(--f-head);font-weight:700;color:var(--plum);p
     <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3zM12 10v4M12 17v.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
-<div class="statusband" id="statusBand" role="status">جارٍ الاتصال بالمنصة…</div>
+<div class="statusband" id="statusBand" role="status" hidden></div>
 <!-- ================= الموقع العام ================= -->
 <section class="surface" id="s-pub">
   <div class="utilbar gut"><div class="wrap"><span data-i>الرقم الوطني الموحد 7043445100</span><span class="ul"><button data-pv="contact" data-i>المقترحات والشكاوى</button><button data-pv="contact" data-i>تواصل معنا</button><button data-jump="stafflogin" data-i>دخول فريق العمل</button></span></div></div>
@@ -1709,9 +1709,8 @@ document.addEventListener('click', async e => {
 /* ===== العرض والاتصال ===== */
 function renderBand(){
   const b = $('#statusBand'); if(!b) return;
-  if(!S.ready){ b.textContent = 'جارٍ الاتصال بالمنصة…'; b.className = 'statusband'; b.hidden = false; return; }
+  if(!S.ready){ b.hidden = true; return; }
   if(QDB.mode === 'local'){ b.textContent = 'وضع العرض: البيانات تُحفظ في هذا المتصفح، والدفع تجريبي لا يخصم مبالغ.'; b.className = 'statusband warn'; b.hidden = false; return; }
-  if(QCFG.testPayments !== false){ b.textContent = 'مرحلة التقييم: الدفع تجريبي لا يخصم مبالغ، وكل ما يُدخل يُحفظ في قاعدة بيانات المنصة.'; b.className = 'statusband'; b.hidden = false; return; }
   b.hidden = true;
 }
 function renderAll(){ renderBand(); renderProgs(); renderCourses(); renderStore(); renderLogin(); renderStaff(); renderMe(); renderWS(); }
