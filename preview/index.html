@@ -1271,13 +1271,13 @@ const inForm = id => `<form id="${id}" class="auth-box" style="gap:12px" novalid
 const fgForm = () => `<form id="f-fg" class="auth-box" style="gap:12px" novalidate><p class="small">أدخل بريدك وسنرسل إليه رابطًا لتعيين كلمة مرور جديدة.</p>
     <div class="fld"><label for="fg-e">البريد الإلكتروني</label><input id="fg-e" type="email" autocomplete="email" dir="ltr"></div>
     <button class="btn p" type="submit">إرسال الرابط</button><div class="msg" id="fg-m"></div></form>`;
-const profFields = withCred => `
+const profFields = (withCred, staff) => `
     <div class="fld"><label for="su-n">الاسم</label><input id="su-n" type="text" autocomplete="name" value="${esc(S.meta?.name || '')}"></div>
     <div class="fld"><label for="su-p">رقم الجوال</label><input id="su-p" type="tel" autocomplete="tel" placeholder="05xxxxxxxx" value="${esc(S.meta?.phone || '')}"></div>
     ${withCred ? `<div class="fld"><label for="su-e">البريد الإلكتروني</label><input id="su-e" type="email" autocomplete="email" dir="ltr"></div>
     <div class="fld"><label for="su-w">كلمة المرور (8 أحرف على الأقل)</label><input id="su-w" type="password" autocomplete="new-password" dir="ltr"></div>` : ''}
-    <div class="fld"><label>سأستخدم الحساب من أجل</label><div class="types">${Object.entries(PURP).map(([k, v], i) => `<label><input type="checkbox" value="${k}" ${i === 0 ? 'checked' : ''}> ${v}</label>`).join('')}</div></div>
-    <label class="chkl"><input type="checkbox" id="su-ok"><span>أوافق على سياسة الخصوصية وشروط الاستخدام، وأعلم أن بيانات أطفالي لا تُنشر ولا تُشارك.</span></label>`;
+    ${staff ? '' : `<div class="fld"><label>سأستخدم الحساب من أجل</label><div class="types">${Object.entries(PURP).map(([k, v], i) => `<label><input type="checkbox" value="${k}" ${i === 0 ? 'checked' : ''}> ${v}</label>`).join('')}</div></div>`}
+    <label class="chkl"><input type="checkbox" id="su-ok"><span>${staff ? 'أوافق على سياسة الخصوصية، وأتعهد بالمحافظة على سرية بيانات المستفيدين وعدم استخدامها لغير عملي في الجمعية.' : 'أوافق على سياسة الخصوصية وشروط الاستخدام، وأعلم أن بيانات أطفالي لا تُنشر ولا تُشارك.'}</span></label>`;
 function renderLogin(){
   const b = $('#loginBody'); if(!b) return;
   if(CUR === 'stafflogin'){ b.innerHTML = ''; return; }
@@ -1355,7 +1355,7 @@ function renderStaff(){
   if(CUR !== 'stafflogin'){ b.innerHTML = ''; return; }
   if(!S.ready){ b.innerHTML = '<p class="small">جارٍ التحقق من صلاحيتك…</p>'; return; }
   if(!S.uid){
-    b.innerHTML = `<div><h1 style="font-size:1.6rem">${AUTHTAB === 'up' ? 'تسجيل موظف جديد' : 'دخول فريق العمل'}</h1><p class="small">${AUTHTAB === 'up' ? 'أنشئ حسابك ببريدك، ثم يُسند إليك مدير المنصة دورك من «الحسابات»، فتظهر لك مساحة العمل عند الدخول.' : 'ادخل بحسابك في المنصة. تظهر مساحة العمل لمن أسند إليه مدير المنصة دورًا.'}</p></div>${tabsHtml(true)}${AUTHTAB === 'fg' ? fgForm() : AUTHTAB === 'up' ? `<form id="f-up" data-staff="1" class="auth-box" style="gap:12px" novalidate>${profFields(true)}<button class="btn s" type="submit">إنشاء الحساب</button><div class="msg" id="suMsg"></div></form>` : inForm('f-sin')}${localNote()}`; return; }
+    b.innerHTML = `<div><h1 style="font-size:1.6rem">${AUTHTAB === 'up' ? 'تسجيل موظف جديد' : 'دخول فريق العمل'}</h1><p class="small">${AUTHTAB === 'up' ? 'أنشئ حسابك ببريد العمل. بعدها يسند إليك مدير المنصة دورك (مدير البرامج، معلم، محرر محتوى، مسؤول المتجر، المسؤول المالي، مسؤول التطوع) من «الحسابات ← فريق العمل والأدوار»، فتظهر لك أقسام دورك عند الدخول.' : 'ادخل بحسابك في المنصة. تظهر مساحة العمل لمن أسند إليه مدير المنصة دورًا.'}</p></div>${tabsHtml(true)}${AUTHTAB === 'fg' ? fgForm() : AUTHTAB === 'up' ? `<form id="f-up" data-staff="1" class="auth-box" style="gap:12px" novalidate>${profFields(true, true)}<button class="btn s" type="submit">إنشاء الحساب</button><div class="msg" id="suMsg"></div></form>` : inForm('f-sin')}${localNote()}`; return; }
   if(!S.isAdmin){ b.innerHTML = `<div><h1 style="font-size:1.6rem">دخول فريق العمل</h1><p class="small">حسابك ${esc(S.email)} جاهز، ولم يُسند إليه دور في فريق العمل بعد. أرسل هذا البريد إلى مدير المنصة ليسند إليك دورك من «الحسابات»، ثم ادخل من هنا.</p></div><button class="btn o" data-jump="pub">العودة للموقع</button><button class="btn o sm" data-signout>تسجيل الخروج</button>`; return; }
   const rs = myRoles(); if(!rs.includes(PICK)) PICK = rs[0];
   b.innerHTML = `<div><h1 style="font-size:1.6rem">دخول فريق العمل</h1><p class="small">مرحبًا ${esc(S.me?.name || S.meta?.name || S.email)}. اختر الدور الذي تدخل به؛ يحدد الدور الأقسام التي تظهر لك.</p></div>
